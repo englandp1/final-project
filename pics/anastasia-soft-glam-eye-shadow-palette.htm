@@ -1,0 +1,2216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"cdf0791ca1",applicationID:"12012992"};window.NREUM||(NREUM={}),__nr_require=function(n,e,t){function r(t){if(!e[t]){var i=e[t]={exports:{}};n[t][0].call(i.exports,function(e){var i=n[t][1][e];return r(i||e)},i,i.exports)}return e[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(n,e,t){function r(){}function i(n,e,t){return function(){return o(n,[u.now()].concat(f(arguments)),e?null:this,t),e?void 0:this}}var o=n("handle"),a=n(4),f=n(5),c=n("ee").get("tracer"),u=n("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(n,e){s[e]=i(d+e,!0,"api")}),s.addPageAction=i(d+"addPageAction",!0),s.setCurrentRouteName=i(d+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(n,e){var t={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),n,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return e.apply(this,arguments)}catch(n){throw c.emit("fn-err",[arguments,this,n],t),n}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(n,e){m[e]=i(l+e)}),newrelic.noticeError=function(n,e){"string"==typeof n&&(n=new Error(n)),o("err",[n,u.now(),!1,e])}},{}],2:[function(n,e,t){function r(n,e){var t=n.getEntries();t.forEach(function(n){"first-paint"===n.name?a("timing",["fp",Math.floor(n.startTime)]):"first-contentful-paint"===n.name&&a("timing",["fcp",Math.floor(n.startTime)])})}function i(n){if(n instanceof c&&!s){var e,t=Math.round(n.timeStamp);e=t>1e12?Date.now()-t:f.now()-t,s=!0,a("timing",["fi",t,{type:n.type,fid:e}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var o,a=n("handle"),f=n("loader"),c=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){o=new PerformanceObserver(r);try{o.observe({entryTypes:["paint"]})}catch(u){}}if("addEventListener"in document){var s=!1,p=["click","keydown","mousedown","pointerdown","touchstart"];p.forEach(function(n){document.addEventListener(n,i,!1)})}}},{}],3:[function(n,e,t){function r(n,e){if(!i)return!1;if(n!==i)return!1;if(!e)return!0;if(!o)return!1;for(var t=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],4:[function(n,e,t){function r(n,e){var t=[],r="",o=0;for(r in n)i.call(n,r)&&(t[o]=e(r,n[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],5:[function(n,e,t){function r(n,e,t){e||(e=0),"undefined"==typeof t&&(t=n?n.length:0);for(var r=-1,i=t-e||0,o=Array(i<0?0:i);++r<i;)o[r]=n[e+r];return o}e.exports=r},{}],6:[function(n,e,t){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(n,e,t){function r(){}function i(n){function e(n){return n&&n instanceof r?n:n?c(n,f,o):o()}function t(t,r,i,o){if(!d.aborted||o){n&&n(t,r,i);for(var a=e(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(n,e){h[n]=v(n).concat(e)}function m(n,e){var t=h[n];if(t)for(var r=0;r<t.length;r++)t[r]===e&&t.splice(r,1)}function v(n){return h[n]||[]}function g(n){return p[n]=p[n]||i(t)}function w(n,e){u(n,function(n,t){e=e||"feature",y[t]=e,e in s||(s[e]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:e,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var f="nr@context",c=n("gos"),u=n(4),s={},p={},d=e.exports=i();d.backlog=s},{}],gos:[function(n,e,t){function r(n,e,t){if(i.call(n,e))return n[e];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(n,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return n[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(n,e,t){function r(n,e,t,r){i.buffer([n],r),i.emit(n,e,t)}var i=n("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(n,e,t){function r(n){var e=typeof n;return!n||"object"!==e&&"function"!==e?-1:n===window?0:a(n,o,function(){return i++})}var i=1,o="nr@id",a=n("gos");e.exports=r},{}],loader:[function(n,e,t){function r(){if(!x++){var n=E.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(n&&n.licenseKey&&n.applicationID&&e))return s.abort();u(y,function(e,t){n[e]||(n[e]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=l.createElement("script");t.src="https://"+n.agent,e.parentNode.insertBefore(t,e)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=n("handle"),u=n(4),s=n("ee"),p=n(3),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1158.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=e.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};n(1),n(2),l[m]?(l[m]("DOMContentLoaded",o,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",i),d[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=n(6)},{}],"wrap-function":[function(n,e,t){function r(n){return!(n&&n instanceof Function&&n.apply&&!n[a])}var i=n("ee"),o=n(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;e.exports=function(n,e){function t(n,e,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){d([u,"",[r,a,i],f])}s(e+"start",[r,a,i],f);try{return c=n.apply(a,r)}catch(p){throw s(e+"err",[r,a,p],f),p}finally{s(e+"end",[r,a,c],f)}}return r(n)?n:(e||(e=""),nrWrapper[a]=n,p(n,nrWrapper),nrWrapper)}function u(n,e,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<e.length;c++)f=e[c],a=n[f],r(a)||(n[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||e){var o=c;c=!0;try{n.emit(t,r,i,e)}catch(a){d([a,t,r,i])}c=o}}function p(n,e){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(n);return t.forEach(function(t){Object.defineProperty(e,t,{get:function(){return n[t]},set:function(e){return n[t]=e,e}})}),e}catch(r){d([r])}for(var i in n)f.call(n,i)&&(e[i]=n[i]);return e}function d(e){try{n.emit("internal-error",e)}catch(t){}}return n||(n=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+<title>Anastasia Soft Glam Eye Shadow Palette | Günstig Hautpflege Kaufen</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="description" content="Anastasia Soft Glam Eye Shadow Palette | Sale: bis zu -40% | Kauf auf Rechnung | Gutschein bei jedem Kauf | Der Online Hautpflege Spezialist." />
+<meta name="keywords" content="" />
+<meta name="robots" content="INDEX,FOLLOW" />
+<link rel="icon" href="https://www.beautyfashionshop.de/media/favicon/default/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="https://www.beautyfashionshop.de/media/favicon/default/favicon.ico" type="image/x-icon" />
+<!--[if lt IE 7]>
+<script type="text/javascript">
+//<![CDATA[
+    var BLANK_URL = 'https://www.beautyfashionshop.de/js/blank.html';
+    var BLANK_IMG = 'https://www.beautyfashionshop.de/js/spacer.gif';
+//]]>
+</script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="https://www.beautyfashionshop.de/media/css_secure/c3ac10c94a1b603b452b4dd4dca15672.css" />
+<link rel="stylesheet" type="text/css" href="https://www.beautyfashionshop.de/media/css_secure/15d819a28831bd97ee66760bca5b5060.css" media="all" />
+<link rel="stylesheet" type="text/css" href="https://www.beautyfashionshop.de/media/css_secure/43971f709ead18f98a50a499b8371a35.css" media="print" />
+<script type="text/javascript" src="https://www.beautyfashionshop.de/media/js/e2ddce93286e4d223fe1c76de29a5929.js"></script>
+<!--[if IE]>
+<link rel="stylesheet" type="text/css" href="https://www.beautyfashionshop.de/media/css_secure/5fc2a61edac60300049879c2464024fb.css" media="all" />
+<![endif]-->
+<!--[if lt IE 7]>
+<script type="text/javascript" src="https://www.beautyfashionshop.de/media/js/07468baa1e7d31c6f0a0cbe0c1fbc48a.js"></script>
+<![endif]-->
+<!--[if lte IE 7]>
+<link rel="stylesheet" type="text/css" href="https://www.beautyfashionshop.de/media/css_secure/5560e1d5e22e8315f65e1f5f7d74ba5b.css" media="all" />
+<![endif]-->
+<!--[if lte IE 8]>
+<link rel="stylesheet" type="text/css" href="https://www.beautyfashionshop.de/media/css_secure/03a26cab4139d598177359395d715eb0.css" media="all" />
+<![endif]-->
+<script type="text/javascript">
+//<![CDATA[
+Mage.Cookies.path     = '/';
+Mage.Cookies.domain   = '.www.beautyfashionshop.de';
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+optionalZipCountries = ["IE"];
+//]]>
+</script>
+<link rel="canonical" href="https://www.beautyfashionshop.de/anastasia-soft-glam-eye-shadow-palette" />
+<meta name="apple-itunes-app" content="app-id=1479651811">
+<meta name="google-play-app" content="app-id=nl.beautyfashionshop.beautyfashionshop">
+<link rel="stylesheet" href="https://www.beautyfashionshop.de/skin/frontend/base/default/japi/lib/smart-app-banner/dist/smart-app-banner.css?v=3.8.4" type="text/css" media="screen">
+<link rel="apple-touch-icon" href="https://media.jmango360.com/mediafile/resources/5cc6d30e5b6aad4495cf549a/5daffab1a15bc3192afa8d91">
+<link rel="android-touch-icon" href="https://media.jmango360.com/mediafile/resources/5cc6d30e5b6aad4495cf549a/5daffab1a15bc3192afa8d91" />
+<script type="text/javascript" src="https://www.beautyfashionshop.de/skin/frontend/base/default/japi/lib/smart-app-banner/dist/smart-app-banner.js?v=4.0.10"></script>
+<script type="text/javascript">
+    new SmartBanner({
+        daysHidden: 15,
+        daysReminder: 15,
+        appStoreLanguage: 'nl',
+        title: 'Beautyfashionshop',
+        author: 'Be Beauty Online B.V',
+        button: 'VIEW',
+        store: {
+            ios: 'On the App Store',
+            android: 'In Google Play'
+        },
+        price: {
+            ios: 'FREE',
+            android: 'FREE'
+        },
+        theme: 'ios' // put platform type ('ios', 'android', etc.) here to force single theme on all device
+        //icon: '' // full path to icon image if not using website icon image
+        //force: 'ios' // Uncomment for platform emulation
+    });
+</script>
+<script>
+        var dataLayer = [({"customerLoggedIn":0,"customerId":0,"customerGroupId":"3","customerGroupCode":"RETAILER","productId":"20814","productName":"Anastasia Soft Glam Eye Shadow Palette","productSku":"ana1.98","productPrice":"56.82","productPriceExcludingTax":"49.00","productTax":"7.82","productTaxRate":19,"productGender":false,"pageType":"catalog\/product\/view"})];
+                        dataLayer.push({"ecommerce":{"detail":{"products":[{"id":"20814","name":"Anastasia Soft Glam Eye Shadow Palette","sku":"ana1.98","price":"49.00","priceexcludingtax":"41.18","tax":"7.82","taxrate":19,"brand":"Anastasia","gender":false,"category":null,"children":[]}]}}});
+        (function (w, d, s, l, i) {
+            if (i == '') { return console.log('No GTM ID provided'); }
+            w[l] = w[l] || [];
+            w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+            if (i == 'DEBUG') return console.log(w[l]);
+            var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            var environment = '&gtm_auth=&gtm_preview=&gtm_cookies_win=x';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl + environment;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-WTNWJCJ');
+    </script>
+<style type="text/css">
+									</style>
+<script type="text/javascript">
+//<![CDATA[
+enUS = {"m":{"wide":["January","February","March","April","May","June","July","August","September","October","November","December"],"abbr":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]}}; // en_US locale reference
+Calendar._DN = ["Sonntag","Montag","Dienstag","Mittwoch","Donnerstag","Freitag","Samstag"]; // full day names
+Calendar._SDN = ["So.","Mo.","Di.","Mi.","Do.","Fr.","Sa."]; // short day names
+Calendar._FD = 0; // First day of the week. "0" means display Sunday first, "1" means display Monday first, etc.
+Calendar._MN = ["Januar","Februar","M\u00e4rz","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"]; // full month names
+Calendar._SMN = ["Jan.","Feb.","M\u00e4rz","Apr.","Mai","Juni","Juli","Aug.","Sep.","Okt.","Nov.","Dez."]; // short month names
+Calendar._am = "vorm."; // am/pm
+Calendar._pm = "nachm.";
+
+// tooltips
+Calendar._TT = {};
+Calendar._TT["INFO"] = 'Über den Kalender';
+
+Calendar._TT["ABOUT"] =
+'DHTML Date/Time Selektor\n' +
+"(c) dynarch.com 2002-2005 / Author: Mihai Bazon\n" +
+'Für die letzte Version besuchen Sie bitte: http://www.dynarch.com/projects/calendar/\n' +
+'Veröffentlicht unter der GNU LGPL. Mehr Informationen unter http://gnu.org/licenses/lgpl.html.' +
+'\n\n' +
+'Datumsauswahl:\n' +
+'- Benutzen Sie die \xab, \xbb Buttons für die Jahresauswahl\n' +
+'- Benutzen Sie die \u2039 Buttons für die Monatsauswahl\n' +
+'- Halten Sie einen der Buttons gedrückt für eine Schnellauswahl.';
+Calendar._TT["ABOUT_TIME"] = '\n\n' +
+'Zeitauswahl:\n' +
+'- Klicken Sie auf einen der Zeitwerte um den Wert zu erhöhen\n' +
+'- oder Umschalt-Taste gedrückt halten und klicken, um den Wert zu verkleinern\n' +
+'- oder klicken und ziehen Sie für eine Schnellauswahl.';
+
+Calendar._TT["PREV_YEAR"] = 'Vor. Jahr (gedrückt halten für Menü)';
+Calendar._TT["PREV_MONTH"] = 'Vor. Monat (gedrückt halten für Menü)';
+Calendar._TT["GO_TODAY"] = 'Heute aufrufen';
+Calendar._TT["NEXT_MONTH"] = 'Nächster Monat (gedrückt halten für Menü)';
+Calendar._TT["NEXT_YEAR"] = 'Nächstes Jahr (gedrückt halten für Menü)';
+Calendar._TT["SEL_DATE"] = 'Datum auswählen';
+Calendar._TT["DRAG_TO_MOVE"] = 'Ziehen zum Bewegen';
+Calendar._TT["PART_TODAY"] = ' (' + "Heute" + ')';
+
+// the following is to inform that "%s" is to be the first day of week
+Calendar._TT["DAY_FIRST"] = 'Zeige %s zuerst';
+
+// This may be locale-dependent. It specifies the week-end days, as an array
+// of comma-separated numbers. The numbers are from 0 to 6: 0 means Sunday, 1
+// means Monday, etc.
+Calendar._TT["WEEKEND"] = "0,6";
+
+Calendar._TT["CLOSE"] = 'Schließen';
+Calendar._TT["TODAY"] = "Heute";
+Calendar._TT["TIME_PART"] = '(Umschalt-)Klick oder ziehen, um Wert zu ändern';
+
+// date formats
+Calendar._TT["DEF_DATE_FORMAT"] = "%d.%m.%Y";
+Calendar._TT["TT_DATE_FORMAT"] = "%e. %B %Y";
+
+Calendar._TT["WK"] = "Woche";
+Calendar._TT["TIME"] = 'Zeit:';
+//]]>
+</script>
+<script async src="https://cdn.klarna.com/1.0/code/client/all.js"></script>
+
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','//connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1359291077433159');
+fbq('track', 'PageView');
+	fbq('track', 'ViewContent', {
+	content_name: 'Anastasia Soft Glam Eye Shadow Palette',
+	content_category: 'Home',
+	content_ids: ['20814'],
+	content_type: 'product',
+	value: 49,
+	currency: 'EUR'
+	});
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1359291077433159&ev=PageView&noscript=1" /></noscript>
+
+<script type="text/javascript">//<![CDATA[
+        var Translator = new Translate({"HTML tags are not allowed":"HTML-Tags nicht zul\u00e4ssig","Please select an option.":"Bitte w\u00e4hlen Sie eine Option.","This is a required field.":"Dies ist ein Pflichtfeld.","Please enter a valid number in this field.":"Bitte geben Sie in dieses Feld eine g\u00fcltige Nummer ein.","The value is not within the specified range.":"Der Wert liegt nicht im angegebenen Bereich.","Please use numbers only in this field. Please avoid spaces or other characters such as dots or commas.":"Bitte verwenden Sie in diesem Feld nur Zahlen. Vermeiden Sie bitte Leerzeichen und andere Zeichen, wie Punkt oder Komma.","Please use letters only (a-z or A-Z) in this field.":"Bitte verwenden Sie ausschlie\u00dflich Buchstaben (a-z oder A-Z) in diesem Feld.","Please use only letters (a-z), numbers (0-9) or underscore(_) in this field, first character should be a letter.":"Bitte geben Sie in dieses Feld nur Buchstaben (a-z), Ziffern (0-9) oder Unterstriche (_) ein, das erste Zeichen sollte ein Buchstabe sein.","Please use only letters (a-z or A-Z) or numbers (0-9) only in this field. No spaces or other characters are allowed.":"Bitte verwenden Sie nur Buchstaben (a-z oder A-Z) oder Zahlen (0-9) in diesem Feld. Leerzeichen oder andere Zeichen sind nicht erlaubt.","Please use only letters (a-z or A-Z) or numbers (0-9) or spaces and # only in this field.":"Bitte verwenden Sie nur Buchstaben (a-z oder A-Z) oder Zahlen (0-9) oder Leerzeichen und Rauten (#) in diesem Feld.","Please enter a valid phone number. For example (123) 456-7890 or 123-456-7890.":"Bitte geben Sie eine g\u00fcltige Telefonnummer ein. Zum Beispiel (123)456-7890 oder 123-456-7890.","Please enter a valid fax number. For example (123) 456-7890 or 123-456-7890.":"Bitte geben Sie eine g\u00fcltige Faxnummer an. Zum Beispiel (123) 456-7890 oder 123-456-7890.","Please enter a valid date.":"Bitte geben Sie ein g\u00fcltiges Datum ein.","The From Date value should be less than or equal to the To Date value.":"Der \"von Datum\"-Wert sollte kleiner oder gleich dem \"bis Datum\"-Wert sein.","Please enter a valid email address. For example johndoe@domain.com.":"Bitte geben Sie eine g\u00fcltige E-Mail Adresse ein. Zum Beispiel johndoe@domain.com","Please use only visible characters and spaces.":"Bitte verwenden Sie nur lesbare Zeichen und Leerzeichen.","Please enter 7 or more characters. Password should contain both numeric and alphabetic characters.":"Bitte geben Sie 7 oder mehr Zeichen ein. Ihr Passwort sollte sowohl Zahlen als auch Buchstaben enthalten.","Please make sure your passwords match.":"Bitte stellen Sie sicher, dass Ihre Passw\u00f6rter \u00fcbereinstimmen.","Please enter a valid URL. Protocol is required (http:\/\/, https:\/\/ or ftp:\/\/)":"Bitte geben Sie eine g\u00fcltige URL mit dem dazugeh\u00f6rigen Protokoll (http:\/\/, https:\/\/ oder ftp:\/\/) an.","Please enter a valid URL. For example http:\/\/www.example.com or www.example.com":"Bitte geben Sie eine g\u00fcltige URL ein, z.B. http:\/\/www.beispiel.com oder www.beispiel.com","Please enter a valid URL Key. For example \"example-page\", \"example-page.html\" or \"anotherlevel\/example-page\".":"Bitte geben Sie einen g\u00fcltigen URL-Schl\u00fcssel an. Zum Beispiel \"beispiel-seite\", \"beispiel-seite.html\" oder \"andereebene\/beispiel-seite\".","Please enter a valid XML-identifier. For example something_1, block5, id-4.":"Bitte geben Sie einen g\u00fcltigen XML-Identifier an. Zum Beispiel irgendwas_1, block5, id-4.","Please enter a valid social security number. For example 123-45-6789.":"Bitte geben Sie eine g\u00fcltige Sozialversicherungsnummer ein. Zum Beispiel 123-45-6789.","Please enter a valid zip code. For example 90602 or 90602-1234.":"Bitte geben Sie eine g\u00fcltige Postleitzahl ein. Zum Beispiel 90602 oder 90602-1234.","Please enter a valid zip code.":"Bitte geben Sie eine g\u00fcltige Postleitzahl ein.","Please use this date format: dd\/mm\/yyyy. For example 17\/03\/2006 for the 17th of March, 2006.":"Bitte verwenden Sie nur dieses Datumsformat: tt\/mm\/jjjj. Zum Beispiel 17\/03\/2006 f\u00fcr den 17. M\u00e4rz 2006.","Please enter a valid $ amount. For example $100.00.":"Bitte geben Sie einen g\u00fcltigen Betrag in US-Dollar ein. Zum Beispiel 100,00 US-Dollar.","Please select one of the above options.":"W\u00e4hlen Sie bitte eine der obigen Optionen aus.","Please select one of the options.":"Bitte w\u00e4hlen Sie eine Option.","Please select State\/Province.":"W\u00e4hlen Sie bitte Staat\/Bundesland aus.","Please enter a number greater than 0 in this field.":"Bitte geben Sie in diesem Feld eine Zahl ein, die gr\u00f6\u00dfer als 0 ist.","Please enter a number 0 or greater in this field.":"Bitte geben Sie eine Zahl in das Feld ein, die 0 oder gr\u00f6\u00dfer ist.","Please enter a valid credit card number.":"Bitte geben Sie eine g\u00fcltige Kreditkartennummer ein.","Credit card number does not match credit card type.":"Kreditkartennummer entspricht nicht dem Kreditkartentyp.","Card type does not match credit card number.":"Kartentyp entspricht nicht der Kreditkartennummer.","Incorrect credit card expiration date.":"Falsches Verfallsdatum der Kreditkarte","Please enter a valid credit card verification number.":"Bitte geben Sie eine g\u00fcltige Kreditkarten-\u00dcberpr\u00fcfungsnummer ein.","Please use only letters (a-z or A-Z), numbers (0-9) or underscore(_) in this field, first character should be a letter.":"Geben Sie in dieses Feld bitte nur Buchstaben (a-z oder A-Z), Ziffern (0-9) oder Unterstreichungszeichen(_) ein; als erstes Zeichen ist nur ein Buchstabe erlaubt.","Please input a valid CSS-length. For example 100px or 77pt or 20em or .5ex or 50%.":"Bitte geben Sie eine g\u00fcltige CSS-L\u00e4nge an. Zum Beispiel 100px oder 77pt oder 20em oder .5ex oder 50%.","Text length does not satisfy specified text range.":"Textl\u00e4nge entspricht nicht dem angegebenen Textbereich.","Please enter a number lower than 100.":"Bitte geben Sie eine Zahl unter 100 ein.","Please select a file":"W\u00e4hlen Sie bitte eine Datei aus","Please enter issue number or start date for switch\/solo card type.":"Bitte geben Sie Ihre Ausgabenummer oder das Erstellungsdatum Ihrer EC-\/Debitkarte an.","Please wait, loading...":"Bitte warten, l\u00e4dt...","This date is a required value.":"Dieses Datum ist ein ben\u00f6tigter Wert.","Please enter a valid day (1-%d).":"Bitte geben Sie einen g\u00fcltigen Tag ein (1-%d).","Please enter a valid month (1-12).":"Bitte geben Sie einen g\u00fcltigen Monat an (1-12).","Please enter a valid year (1900-%d).":"Bitte geben Sie ein g\u00fcltiges Jahr an (1900-%d).","Please enter a valid full date":"Bitte geben Sie ein vollst\u00e4ndiges, g\u00fcltiges Datum an.","Please enter a valid date between %s and %s":"Bitte geben Sie ein g\u00fcltiges Datum zwischen %s und %s an.","Please enter a valid date equal to or greater than %s":"Bitte geben Sie ein g\u00fcltiges Datum gleich oder gr\u00f6\u00dfer als %s an.","Please enter a valid date less than or equal to %s":"Bitte geben Sie ein g\u00fcltiges Datum kleiner oder gleich %s an.","Complete":"Vollst\u00e4ndig","Add Products":"Produkte hinzuf\u00fcgen","Please choose to register or to checkout as a guest":"Bitte registrieren Sie sich oder gehen Sie als Gast zum Checkout","Your order cannot be completed at this time as there is no shipping methods available for it. Please make necessary changes in your shipping address.":"Ihre Bestellung kann derzeit nicht abgeschlossen werden, da keine Versandart hierf\u00fcr verf\u00fcgbar ist. Bitte f\u00fchren Sie die notwendigen Ver\u00e4nderungen bei Ihrer Lieferadresse durch.","Please specify shipping method.":"Bitte die Versandmethode spezifizieren.","Your order cannot be completed at this time as there is no payment methods available for it.":"Ihre Bestellung kann momentan nicht abgeschlossen werden, da keine Zahlungsmethode zur Verf\u00fcgung steht.","Please specify payment method.":"Bitte geben Sie die Zahlungsmethode an.","Add to Cart":"Zum Warenkobrn hinzuf\u00fcgen","In Stock":"Auf Lager","Out of Stock":"Nicht vorr\u00e4tig"});
+        //]]></script><meta name="p:domain_verify" content="d9854afd194a3590935818788b8bd74a" />
+<script type="text/javascript">
+       var _adftrack = {
+            pm: 343548,
+            divider: encodeURIComponent('|'),
+            comid:15392613,
+            pagename: encodeURIComponent('15392613|sale'),
+            order : {
+                  sales: 'price',
+                  orderid: 'sku',
+                  sv1: 'de',
+                  itms: [{
+                       productname: '<%productName%>',
+                       productid: '<%SKU%>',
+                       svn1: '<%productQuantity%>',
+                       svn2: '<%productPrice%>'
+                  }]
+           }
+       };
+       (function () { var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = 'https://s.kk-resources.com/s.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x); })();
+</script>
+<script type="text/javascript">
+       var _adftrack = {
+            pm: 343548,
+            divider: encodeURIComponent('|'),
+            comid:15392713,
+            pagename: encodeURIComponent('15392713|sale'),
+            order : {
+                  sales: 'price',
+                  orderid: 'sku',
+                  sv1: 'at',
+                  itms: [{
+                       productname: '<%productName%>',
+                       productid: '<%SKU%>',
+                       svn1: '<%productQuantity%>',
+                       svn2: '<%productPrice%>'
+                  }]
+           }
+       };
+       (function () { var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = 'https://s.kk-resources.com/s.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x); })();
+</script>
+</head>
+<body class=" catalog-product-view responsive catalog-product-view product-anastasia-soft-glam-eye-shadow-palette ">
+<script>dataLayer = [{"visitorLoginState":"Logged out","visitorType":"NOT LOGGED IN","visitorLifetimeValue":0,"visitorExistingCustomer":"No"}];</script>
+<script>shopgoStoresDataLayer = [{"visitorLoginState":"Logged out","visitorType":"NOT LOGGED IN","visitorLifetimeValue":0,"visitorExistingCustomer":"No"}];</script>
+
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5NCMHV" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5NCMHV');</script>
+
+<noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WTNWJCJ&gtm_auth=&gtm_preview=&gtm_cookies_win=x" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+<div id="root-wrapper">
+<div class="wrapper">
+<noscript>
+        <div class="global-site-notice noscript">
+            <div class="notice-inner">
+                <p>
+                    <strong>JavaScript scheint in Ihrem Browser deaktiviert zu sein.</strong><br />
+                    Sie müssen JavaScript in Ihrem Browser aktivieren um alle Funktionen dieser Webseite nutzen zu können.                </p>
+            </div>
+        </div>
+    </noscript>
+<div class="page">
+<div id="top" class="header-container header-regular">
+<div class="header-container2">
+<div class="header-container3">
+<div class="header-top-container">
+<div class="header-top header container clearer">
+<div class="inner-container">
+<div class="left-column">
+<div class="item item-left block_header_top_left"><div class="links-wrapper-separators top-custom">
+<ul>
+<li class="first hide-below-768"><div class="li-cont"><span class="ic ic-lg ic-truck"></span><span class="title">Versandkosten 3,95 € ab 40 € GRATIS Versand.</span></div></li>
+<li><div class="li-cont hide-below-768"><span class="ic ic-lg ic-success"></span><span class="title">Kaufen auf Rechnung</span></div></li>
+<li><div class="li-cont"><a href="/kassen-aktion"><span class="ic ic-lg ic-gift"></span><span class="title">Gutschein bei jedem Kauf</a></span></div></li>
+<li class="last dropdn hide-below-768"><div class="li-cont"><span class="title">Online-Shop</span><span class="caret"></span></div>
+<div class="klan-cont">
+<ul>
+<li><span class="ic ic-lg ic-mobile"></span><strong>0031 53-20 30 290</strong></li>
+<li><a href="/kontakt"><span class="ic ic-lg ic-letter"></span><strong>E-mail Senden</strong></a></li>
+<li class="last">
+<ul class="bullet">
+<li><a href="/kontakt">Kontakt & Service</a></li>
+<li><a href="/fragen">Versand</a></li>
+<li><a href="/zahlungsmoglichkeiten">Zahlungsmöglichkeiten</a></li>
+<li><a href="/impressum">Impressum</a></li>
+<li><a href="/datenschutzerklaerung">Datenschutzerklaerung</a></li>
+<li><a href="/widerruf">Widerruf</a></li>
+<li><a href="/agb">AGB</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div>
+<div class="item item-left hide-below-960">
+<p class="welcome-msg"> </p>
+</div>
+</div> 
+<div class="right-column">
+<div class="item item-right"><div id="user-menu-wrapper-regular">
+<div id="user-menu" class="user-menu">
+<div id="account-links-wrapper-regular">
+<div id="header-account" class="top-links links-wrapper-separators-left skip-content skip-content--style">
+<ul class="links">
+<li class="first last"><a href="https://www.beautyfashionshop.de/customer/account/" title="Anmelden">Anmelden</a></li>
+</ul>
+</div>
+</div>
+<div class="line-break-after"></div>
+</div> 
+</div></div>
+<div id="currency-switcher-wrapper-regular" class="item item-right"></div>
+<div id="lang-switcher-wrapper-regular" class="item item-right"></div>
+</div> 
+</div> 
+</div> 
+</div> 
+<div class="header-primary-container">
+<div class="header-primary header container">
+<div class="inner-container">
+<div class="hp-blocks-holder skip-links--4">
+
+<div class="logo-wrapper--mobile hide-below-480">
+<a class="logo logo--mobile" href="https://www.beautyfashionshop.de/" title="Beautyfashionshop.de">
+<img src="https://www.beautyfashionshop.de/skin/frontend/ultimo/default/images/beautyfashionshop_logo.png" alt="Beautyfashionshop.de" />
+</a>
+</div>
+<div class="clearer after-mobile-logo"></div>
+
+<a href="#header-nav" class="skip-link skip-nav">
+<span class="icon ic ic-menu"></span>
+<span class="label">Menü</span>
+</a>
+
+<div class="logo-wrapper--mobile hide-above-480">
+<a class="logo logo--mobile" href="https://www.beautyfashionshop.de/" title="Beautyfashionshop.de">
+<img src="/skin/frontend/ultimo/default/images/bfs_mobile.png" alt="Beautyfashionshop.de" />
+</a>
+</div>
+<a href="#header-search" class="skip-link skip-search">
+<span class="icon ic ic-search"></span>
+<span class="label">Suche</span>
+</a>
+<a href="#header-account" class="skip-link skip-account">
+<span class="icon ic ic-user"></span>
+<span class="label">Mein Konto</span>
+</a>
+
+<div id="mini-cart-wrapper-mobile"></div>
+<div class="skip-links-clearer clearer"></div>
+
+
+<div id="user-menu-wrapper-mobile"></div>
+
+
+<div class="hp-block left-column grid12-4">
+<div class="item"><div class="logo-wrapper logo-wrapper--regular">
+<a class="logo logo--regular" href="https://www.beautyfashionshop.de/" title="Beautyfashionshop.de"><strong>Beautyfashionshop.de</strong><img src="https://www.beautyfashionshop.de/skin/frontend/ultimo/default/images/beautyfashionshop_logo.png" alt="Beautyfashionshop.de" /></a>
+</div>
+</div>
+</div> 
+
+<div class="hp-block central-column grid12-4">
+<div class="item"><div id="search-wrapper-regular">
+<div id="header-search" class="skip-content skip-content--style search-wrapper">
+<form id="search_mini_form" action="https://www.beautyfashionshop.de/catalogsearch/result/" method="get">
+<div class="form-search">
+<label for="search">Suche:</label>
+<input id="search" type="search" name="q" value="" class="input-text required-entry" placeholder="Den gesamten Shop durchsuchen..." />
+<button type="submit" title="Suche" class="button search-button"><span><span>Suche</span></span></button>
+</div>
+<div id="search_autocomplete" class="search-autocomplete"></div>
+<script type="text/javascript">
+			var _wssq = _wssq || [];
+			_wssq.push(['_load', { 'suggest' : {"account":"SQ-101082-1","fieldId":"search","version":"4"}}]);
+			_wssq.push(['suggest._setPosition', 'screen-middle']);
+			_wssq.push(['suggest._setLocale', 'de_DE']);
+			_wssq.push(['suggest._setFixedFilters', { 'magento_store' : 'beautyfashionshopde' }]);
+									(function() {
+				var ws = document.createElement('script'); ws.type = 'text/javascript'; ws.async = true;
+				ws.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'static.sooqr.com/sooqr.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ws, s);
+			})();
+		</script>
+</form>
+</div>
+</div>
+</div>
+</div> 
+
+<div class="hp-block right-column grid12-4">
+<div class="item"><div id="mini-cart-wrapper-regular">
+<div id="mini-cart" class="mini-cart dropdown is-empty">
+<a href="#header-cart" class="mini-cart-heading dropdown-heading cover skip-link skip-cart">
+<span>
+<span class="icon ic ic-cart"></span>
+<span class="label" style="display:none;">Zum Warenkorb</span>
+<span class="caret">&nbsp;</span>
+</span>
+</a> 
+<div id="header-cart" class="mini-cart-content dropdown-content left-hand block block block-cart skip-content skip-content--style">
+<div class="block-content-inner">
+<div class="empty">Sie haben keine Artikel in Ihrem Einkaufswagen.</div>
+</div> 
+</div> 
+</div> 
+</div> 
+</div>
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+<div id="header-nav" class="nav-container skip-content sticky-container">
+<div class="nav container clearer">
+<div class="inner-container">
+<div class="mobnav-trigger-wrapper clearer">
+<a class="mobnav-trigger" href="#">
+<span class="trigger-icon"><span class="line"></span><span class="line"></span><span class="line"></span></span>
+<span>Menü</span>
+</a>
+</div>
+<ul id="nav" class="nav-regular opt-fx-fade-inout opt-sb0">
+<li id="nav-holder1" class="nav-item level0 level-top nav-holder"></li>
+<li id="nav-holder2" class="nav-item level0 level-top nav-holder"></li>
+<li id="nav-holder3" class="nav-item level0 level-top nav-holder"></li>
+<li class="nav-item nav-item--home level0 level-top">
+<a class="level-top" href="https://www.beautyfashionshop.de/"><span class="ic ic-home"></span></a>
+</li>
+<li class="nav-item level0 nav-1 level-top first classic"><a href="https://www.beautyfashionshop.de/marken" class="level-top"><span>Marken</span></a></li><li class="nav-item level0 nav-2 level-top nav-item--parent mega nav-item--only-subcategories parent"><a href="https://www.beautyfashionshop.de/pflege" class="level-top"><span>Pflege</span><span class="caret">&nbsp;</span></a><span class="opener"></span><div class="nav-panel--dropdown nav-panel full-width"><div class="nav-panel-inner"><div class="nav-block--center grid12-12"><ul class="level0 nav-submenu nav-submenu--mega dd-itemgrid dd-itemgrid-6col"><li class="nav-item level1 nav-2-1 first nav-item--only-subcategories parent"><a href="https://www.beautyfashionshop.de/pflege/gesicht"><span>Gesicht</span><span class="caret">&nbsp;</span></a><span class="opener"></span><ul class="level1 nav-submenu nav-panel"><li class="nav-item level2 nav-2-1-1 first classic"><a href="https://www.beautyfashionshop.de/pflege/gesicht/bb-cc-creams"><span>BB &amp; CC Creams</span></a></li><li class="nav-item level2 nav-2-1-2 classic"><a href="https://www.beautyfashionshop.de/pflege/gesicht/tagespflege"><span>Tagespflege</span></a></li><li class="nav-item level2 nav-2-1-3 classic"><a href="https://www.beautyfashionshop.de/pflege/gesicht/augenpflege"><span>Augenpflege</span></a></li><li class="nav-item level2 nav-2-1-4 classic"><a href="https://www.beautyfashionshop.de/pflege/gesicht/lippenpflege"><span>Lippenpflege</span></a></li><li class="nav-item level2 nav-2-1-5 classic"><a href="https://www.beautyfashionshop.de/pflege/gesicht/masken"><span>Masken</span></a></li><li class="nav-item level2 nav-2-1-6 classic"><a href="https://www.beautyfashionshop.de/pflege/gesicht/nachtpflege"><span>Nachtpflege</span></a></li><li class="nav-item level2 nav-2-1-7 classic"><a href="https://www.beautyfashionshop.de/pflege/gesicht/gesichtsreinigung"><span>Gesichtsreinigung</span></a></li><li class="nav-item level2 nav-2-1-8 classic"><a href="https://www.beautyfashionshop.de/pflege/gesicht/seren-kuren"><span>Seren &amp; Kuren</span></a></li><li class="nav-item level2 nav-2-1-9 classic"><a href="https://www.beautyfashionshop.de/pflege/gesicht/hals-dekollete"><span>Hals &amp; Dekolleté</span></a></li><li class="nav-item level2 nav-2-1-10 classic"><a href="https://www.beautyfashionshop.de/pflege/gesicht/mundpflege"><span>Mundpflege</span></a></li><li class="nav-item level2 nav-2-1-11 classic"><a href="https://www.beautyfashionshop.de/pflege/gesicht/anti-aging"><span>Anti-Aging</span></a></li><li class="nav-item level2 nav-2-1-12 classic"><a href="https://www.beautyfashionshop.de/pflege/gesicht/aroma-therapy"><span>Aroma Therapy</span></a></li><li class="nav-item level2 nav-2-1-13 classic"><a href="https://www.beautyfashionshop.de/pflege/gesicht/gesichtsreinigungsgerate"><span>Gesichtsreinigungsgeräte</span></a></li><li class="nav-item level2 nav-2-1-14 classic"><a href="https://www.beautyfashionshop.de/pflege/gesicht/gesichtsverjungung"><span>Gesichtsverjüngung</span></a></li><li class="nav-item level2 nav-2-1-15 classic"><a href="https://www.beautyfashionshop.de/pflege/gesicht/scrubs-peelings"><span>Scrubs &amp; Peelings</span></a></li><li class="nav-item level2 nav-2-1-16 classic"><a href="https://www.beautyfashionshop.de/pflege/gesicht/ampullen"><span>Ampullen</span></a></li><li class="nav-item level2 nav-2-1-17 classic"><a href="https://www.beautyfashionshop.de/pflege/gesicht/moisturizers"><span>Moisturizers</span></a></li><li class="nav-item level2 nav-2-1-18 last classic"><a href="https://www.beautyfashionshop.de/pflege/gesicht/toner"><span>Toner</span></a></li></ul></li><li class="nav-item level1 nav-2-2 nav-item--only-subcategories parent"><a href="https://www.beautyfashionshop.de/pflege/korper"><span>Körper</span><span class="caret">&nbsp;</span></a><span class="opener"></span><ul class="level1 nav-submenu nav-panel"><li class="nav-item level2 nav-2-2-19 first classic"><a href="https://www.beautyfashionshop.de/pflege/korper/nahrungserganzung"><span>Nahrungsergänzung</span></a></li><li class="nav-item level2 nav-2-2-20 classic"><a href="https://www.beautyfashionshop.de/pflege/korper/reiniging"><span>Reiniging</span></a></li><li class="nav-item level2 nav-2-2-21 classic"><a href="https://www.beautyfashionshop.de/pflege/korper/deodorant"><span>Deodorant</span></a></li><li class="nav-item level2 nav-2-2-22 classic"><a href="https://www.beautyfashionshop.de/pflege/korper/korpercreme-milch"><span>Körpercreme &amp; Milch</span></a></li><li class="nav-item level2 nav-2-2-23 classic"><a href="https://www.beautyfashionshop.de/pflege/korper/enthaarung"><span>Enthaarung</span></a></li><li class="nav-item level2 nav-2-2-24 classic"><a href="https://www.beautyfashionshop.de/pflege/korper/abnehmen-festigen"><span>Abnehmen &amp; Festigen</span></a></li><li class="nav-item level2 nav-2-2-25 classic"><a href="https://www.beautyfashionshop.de/pflege/korper/shower-gel"><span>Shower Gel</span></a></li><li class="nav-item level2 nav-2-2-26 classic"><a href="https://www.beautyfashionshop.de/pflege/korper/buste"><span>Büste</span></a></li><li class="nav-item level2 nav-2-2-27 classic"><a href="https://www.beautyfashionshop.de/pflege/korper/beauty-ol"><span>Beauty Öl</span></a></li><li class="nav-item level2 nav-2-2-28 classic"><a href="https://www.beautyfashionshop.de/pflege/korper/body-mist"><span>Body Mist</span></a></li><li class="nav-item level2 nav-2-2-29 classic"><a href="https://www.beautyfashionshop.de/pflege/korper/hpl"><span>HPL</span></a></li><li class="nav-item level2 nav-2-2-30 classic"><a href="https://www.beautyfashionshop.de/pflege/korper/body-butter"><span>Body Butter</span></a></li><li class="nav-item level2 nav-2-2-31 classic"><a href="https://www.beautyfashionshop.de/pflege/korper/badebomben"><span>Badebomben</span></a></li><li class="nav-item level2 nav-2-2-32 last classic"><a href="https://www.beautyfashionshop.de/pflege/korper/seife"><span>Seife</span></a></li></ul></li><li class="nav-item level1 nav-2-3 nav-item--only-subcategories parent"><a href="https://www.beautyfashionshop.de/pflege/hand-fuss"><span>Hand &amp; Fuß</span><span class="caret">&nbsp;</span></a><span class="opener"></span><ul class="level1 nav-submenu nav-panel"><li class="nav-item level2 nav-2-3-33 first classic"><a href="https://www.beautyfashionshop.de/pflege/hand-fuss/handpflege"><span>Handpflege</span></a></li><li class="nav-item level2 nav-2-3-34 classic"><a href="https://www.beautyfashionshop.de/pflege/hand-fuss/fusspflege"><span>Fußpflege</span></a></li><li class="nav-item level2 nav-2-3-35 classic"><a href="https://www.beautyfashionshop.de/pflege/hand-fuss/masken-scrub"><span>Masken &amp; Scrub</span></a></li><li class="nav-item level2 nav-2-3-36 classic"><a href="https://www.beautyfashionshop.de/pflege/hand-fuss/seife"><span>Seife</span></a></li><li class="nav-item level2 nav-2-3-37 last classic"><a href="https://www.beautyfashionshop.de/pflege/hand-fuss/accessoires"><span>Accessoires</span></a></li></ul></li><li class="nav-item level1 nav-2-4 nav-item--only-subcategories parent"><a href="https://www.beautyfashionshop.de/pflege/sonnenpflege"><span>Sonnenpflege</span><span class="caret">&nbsp;</span></a><span class="opener"></span><ul class="level1 nav-submenu nav-panel"><li class="nav-item level2 nav-2-4-38 first classic"><a href="https://www.beautyfashionshop.de/pflege/sonnenpflege/sonnenschutz"><span>Sonnenschutz</span></a></li><li class="nav-item level2 nav-2-4-39 classic"><a href="https://www.beautyfashionshop.de/pflege/sonnenpflege/after-sun"><span>After Sun</span></a></li><li class="nav-item level2 nav-2-4-40 classic"><a href="https://www.beautyfashionshop.de/pflege/sonnenpflege/selbstbrauner-tanning"><span>Selbstbräuner/Tanning</span></a></li><li class="nav-item level2 nav-2-4-41 classic"><a href="https://www.beautyfashionshop.de/pflege/sonnenpflege/sonnenschutz-gesicht"><span>Sonnenschutz-Gesicht</span></a></li><li class="nav-item level2 nav-2-4-42 classic"><a href="https://www.beautyfashionshop.de/pflege/sonnenpflege/sonnenschutz-korper"><span>Sonnenschutz-Körper</span></a></li><li class="nav-item level2 nav-2-4-43 classic"><a href="https://www.beautyfashionshop.de/pflege/sonnenpflege/sonnenschutz-make-up"><span>Sonnenschutz Make-Up</span></a></li><li class="nav-item level2 nav-2-4-44 last classic"><a href="https://www.beautyfashionshop.de/pflege/sonnenpflege/solarium-creme"><span>Solarium Creme</span></a></li></ul></li><li class="nav-item level1 nav-2-5 nav-item--only-subcategories parent"><a href="https://www.beautyfashionshop.de/pflege/baby-kind"><span>Baby &amp; Kind</span><span class="caret">&nbsp;</span></a><span class="opener"></span><ul class="level1 nav-submenu nav-panel"><li class="nav-item level2 nav-2-5-45 first classic"><a href="https://www.beautyfashionshop.de/pflege/baby-kind/kopflause"><span>Kopfläuse</span></a></li><li class="nav-item level2 nav-2-5-46 classic"><a href="https://www.beautyfashionshop.de/pflege/baby-kind/sonnenschutz"><span>Sonnenschutz</span></a></li><li class="nav-item level2 nav-2-5-47 classic"><a href="https://www.beautyfashionshop.de/pflege/baby-kind/gesichtspflege"><span>Gesichtspflege</span></a></li><li class="nav-item level2 nav-2-5-48 classic"><a href="https://www.beautyfashionshop.de/pflege/baby-kind/korperpflege"><span>Körperpflege</span></a></li><li class="nav-item level2 nav-2-5-49 classic"><a href="https://www.beautyfashionshop.de/pflege/baby-kind/parfum"><span>Parfüm</span></a></li><li class="nav-item level2 nav-2-5-50 last classic"><a href="https://www.beautyfashionshop.de/pflege/baby-kind/reiniging"><span>Reiniging</span></a></li></ul></li><li class="nav-item level1 nav-2-6 last nav-item--only-subcategories parent"><a href="https://www.beautyfashionshop.de/pflege/produkte-problemhaut"><span>Produkte Problemhaut</span><span class="caret">&nbsp;</span></a><span class="opener"></span><ul class="level1 nav-submenu nav-panel"><li class="nav-item level2 nav-2-6-51 first classic"><a href="https://www.beautyfashionshop.de/pflege/produkte-problemhaut/rote-haut"><span>Rote Haut</span></a></li><li class="nav-item level2 nav-2-6-52 classic"><a href="https://www.beautyfashionshop.de/pflege/produkte-problemhaut/akne-juckende-pusteln"><span>Akne &amp; juckende Pusteln</span></a></li><li class="nav-item level2 nav-2-6-53 classic"><a href="https://www.beautyfashionshop.de/pflege/produkte-problemhaut/rosazea"><span>Rosazea</span></a></li><li class="nav-item level2 nav-2-6-54 classic"><a href="https://www.beautyfashionshop.de/pflege/produkte-problemhaut/ekzem"><span>Ekzem</span></a></li><li class="nav-item level2 nav-2-6-55 classic"><a href="https://www.beautyfashionshop.de/pflege/produkte-problemhaut/pigmentflecken"><span>Pigmentflecken</span></a></li><li class="nav-item level2 nav-2-6-56 classic"><a href="https://www.beautyfashionshop.de/pflege/produkte-problemhaut/augenringe"><span>Augenringe</span></a></li><li class="nav-item level2 nav-2-6-57 classic"><a href="https://www.beautyfashionshop.de/pflege/produkte-problemhaut/fettige-haut"><span>Fettige Haut</span></a></li><li class="nav-item level2 nav-2-6-58 classic"><a href="https://www.beautyfashionshop.de/pflege/produkte-problemhaut/hautirritation"><span>Hautirritation</span></a></li><li class="nav-item level2 nav-2-6-59 classic"><a href="https://www.beautyfashionshop.de/pflege/produkte-problemhaut/couperose"><span>Couperose</span></a></li><li class="nav-item level2 nav-2-6-60 classic"><a href="https://www.beautyfashionshop.de/pflege/produkte-problemhaut/empfindliche-haut"><span>Empfindliche Haut</span></a></li><li class="nav-item level2 nav-2-6-61 last classic"><a href="https://www.beautyfashionshop.de/pflege/produkte-problemhaut/trockene-haut"><span>Trockene Haut</span></a></li></ul></li></ul></div></div></div></li><li class="nav-item level0 nav-3 level-top nav-item--parent mega nav-item--only-subcategories parent"><a href="https://www.beautyfashionshop.de/make-up" class="level-top"><span>Make - Up</span><span class="caret">&nbsp;</span></a><span class="opener"></span><div class="nav-panel--dropdown nav-panel full-width"><div class="nav-panel-inner"><div class="nav-block--center grid12-12"><ul class="level0 nav-submenu nav-submenu--mega dd-itemgrid dd-itemgrid-5col"><li class="nav-item level1 nav-3-1 first nav-item--only-subcategories parent"><a href="https://www.beautyfashionshop.de/make-up/gesicht"><span>Gesicht</span><span class="caret">&nbsp;</span></a><span class="opener"></span><ul class="level1 nav-submenu nav-panel"><li class="nav-item level2 nav-3-1-1 first classic"><a href="https://www.beautyfashionshop.de/make-up/gesicht/concealer"><span>Concealer</span></a></li><li class="nav-item level2 nav-3-1-2 classic"><a href="https://www.beautyfashionshop.de/make-up/gesicht/grundierung"><span>Foundation</span></a></li><li class="nav-item level2 nav-3-1-3 classic"><a href="https://www.beautyfashionshop.de/make-up/gesicht/puder"><span>Puder</span></a></li><li class="nav-item level2 nav-3-1-4 classic"><a href="https://www.beautyfashionshop.de/make-up/gesicht/rouge"><span>Rouge</span></a></li><li class="nav-item level2 nav-3-1-5 classic"><a href="https://www.beautyfashionshop.de/make-up/gesicht/bronzer"><span>Bronzer</span></a></li><li class="nav-item level2 nav-3-1-6 classic"><a href="https://www.beautyfashionshop.de/make-up/gesicht/highlighter"><span>Highlighter</span></a></li><li class="nav-item level2 nav-3-1-7 classic"><a href="https://www.beautyfashionshop.de/make-up/gesicht/contouring"><span>Contouring</span></a></li><li class="nav-item level2 nav-3-1-8 classic"><a href="https://www.beautyfashionshop.de/make-up/gesicht/primer"><span>Primer</span></a></li><li class="nav-item level2 nav-3-1-9 classic"><a href="https://www.beautyfashionshop.de/make-up/gesicht/setting-spray-powder"><span>Setting Spray &amp; Powder</span></a></li><li class="nav-item level2 nav-3-1-10 classic"><a href="https://www.beautyfashionshop.de/make-up/gesicht/remover"><span>Make-up Entferner</span></a></li><li class="nav-item level2 nav-3-1-11 last classic"><a href="https://www.beautyfashionshop.de/make-up/gesicht/make-up-palette"><span>Make-up Palette</span></a></li></ul></li><li class="nav-item level1 nav-3-2 nav-item--only-subcategories parent"><a href="https://www.beautyfashionshop.de/make-up/augen"><span>Augen</span><span class="caret">&nbsp;</span></a><span class="opener"></span><ul class="level1 nav-submenu nav-panel"><li class="nav-item level2 nav-3-2-12 first classic"><a href="https://www.beautyfashionshop.de/make-up/augen/mascara"><span>Mascara</span></a></li><li class="nav-item level2 nav-3-2-13 classic"><a href="https://www.beautyfashionshop.de/make-up/augen/lidschatten"><span>Lidschatten</span></a></li><li class="nav-item level2 nav-3-2-14 classic"><a href="https://www.beautyfashionshop.de/make-up/augen/augenkonturstift"><span>Kajal</span></a></li><li class="nav-item level2 nav-3-2-15 classic"><a href="https://www.beautyfashionshop.de/make-up/augen/eyeliner"><span>Eyeliner</span></a></li><li class="nav-item level2 nav-3-2-16 classic"><a href="https://www.beautyfashionshop.de/make-up/augen/primer"><span>Primer</span></a></li><li class="nav-item level2 nav-3-2-17 classic"><a href="https://www.beautyfashionshop.de/make-up/augen/oog-make-up-remover"><span>Make-up Entferner</span></a></li><li class="nav-item level2 nav-3-2-18 classic"><a href="https://www.beautyfashionshop.de/make-up/augen/wimpern-und-augenbrauenseren"><span>Wimpern-und Augenbrauenseren</span></a></li><li class="nav-item level2 nav-3-2-19 classic"><a href="https://www.beautyfashionshop.de/make-up/augen/wimperlifting"><span>Wimperlifting</span></a></li><li class="nav-item level2 nav-3-2-20 classic"><a href="https://www.beautyfashionshop.de/make-up/augen/wimper-augenbrauenfarbe"><span>Wimpern- &amp; Augenbrauenfarbe</span></a></li><li class="nav-item level2 nav-3-2-21 classic"><a href="https://www.beautyfashionshop.de/make-up/augen/wenkbrauwpoeder"><span>Augenbrauen Make-up</span></a></li><li class="nav-item level2 nav-3-2-22 classic"><a href="https://www.beautyfashionshop.de/make-up/augen/augenbrauenstift"><span>Augenbrauenstift</span></a></li><li class="nav-item level2 nav-3-2-23 last classic"><a href="https://www.beautyfashionshop.de/make-up/augen/augenbrauengel"><span>Augenbrauengel</span></a></li></ul></li><li class="nav-item level1 nav-3-3 nav-item--only-subcategories parent"><a href="https://www.beautyfashionshop.de/make-up/lippen"><span>Lippen</span><span class="caret">&nbsp;</span></a><span class="opener"></span><ul class="level1 nav-submenu nav-panel"><li class="nav-item level2 nav-3-3-24 first classic"><a href="https://www.beautyfashionshop.de/make-up/lippen/lippenstift"><span>Lippenstift</span></a></li><li class="nav-item level2 nav-3-3-25 classic"><a href="https://www.beautyfashionshop.de/make-up/lippen/lipgloss"><span>Lipgloss</span></a></li><li class="nav-item level2 nav-3-3-26 classic"><a href="https://www.beautyfashionshop.de/make-up/lippen/lipliner"><span>Lipliner</span></a></li><li class="nav-item level2 nav-3-3-27 classic"><a href="https://www.beautyfashionshop.de/make-up/lippen/lippenbalsam"><span>Lippenbalsam</span></a></li><li class="nav-item level2 nav-3-3-28 classic"><a href="https://www.beautyfashionshop.de/make-up/lippen/lip-plumper"><span>Lip Plumper</span></a></li><li class="nav-item level2 nav-3-3-29 last classic"><a href="https://www.beautyfashionshop.de/make-up/lippen/lip-primer"><span>Lip Primer</span></a></li></ul></li><li class="nav-item level1 nav-3-4 nav-item--only-subcategories parent"><a href="https://www.beautyfashionshop.de/make-up/nagel"><span>Nägel</span><span class="caret">&nbsp;</span></a><span class="opener"></span><ul class="level1 nav-submenu nav-panel"><li class="nav-item level2 nav-3-4-30 first classic"><a href="https://www.beautyfashionshop.de/make-up/nagel/gelnagellack"><span>Gelnagellack</span></a></li><li class="nav-item level2 nav-3-4-31 classic"><a href="https://www.beautyfashionshop.de/make-up/nagel/acrylnagel"><span>Acrylnägel</span></a></li><li class="nav-item level2 nav-3-4-32 classic"><a href="https://www.beautyfashionshop.de/make-up/nagel/nagellack"><span>Nagellack</span></a></li><li class="nav-item level2 nav-3-4-33 classic"><a href="https://www.beautyfashionshop.de/make-up/nagel/nagelpflege"><span>Nagelpflege</span></a></li><li class="nav-item level2 nav-3-4-34 classic"><a href="https://www.beautyfashionshop.de/make-up/nagel/nagelfeilen"><span>Nagelfeilen</span></a></li><li class="nav-item level2 nav-3-4-35 classic"><a href="https://www.beautyfashionshop.de/make-up/nagel/scheren-zangen"><span>Nagelscheren &amp; -Knipser</span></a></li><li class="nav-item level2 nav-3-4-36 classic"><a href="https://www.beautyfashionshop.de/make-up/nagel/base-topcoat"><span>Base- &amp; Topcoat</span></a></li><li class="nav-item level2 nav-3-4-37 classic"><a href="https://www.beautyfashionshop.de/make-up/nagel/dip-powder"><span>Dip Powder</span></a></li><li class="nav-item level2 nav-3-4-38 classic"><a href="https://www.beautyfashionshop.de/make-up/nagel/uv-led-lampen"><span>UV/LED Lampen</span></a></li><li class="nav-item level2 nav-3-4-39 classic"><a href="https://www.beautyfashionshop.de/make-up/nagel/nagellackentferner"><span>Nagellackentferner</span></a></li><li class="nav-item level2 nav-3-4-40 classic"><a href="https://www.beautyfashionshop.de/make-up/nagel/cleansers"><span>Cleansers</span></a></li><li class="nav-item level2 nav-3-4-41 classic"><a href="https://www.beautyfashionshop.de/make-up/nagel/nageltips"><span>Nageltips</span></a></li><li class="nav-item level2 nav-3-4-42 classic"><a href="https://www.beautyfashionshop.de/make-up/nagel/pinsel"><span>Pinsel</span></a></li><li class="nav-item level2 nav-3-4-43 classic"><a href="https://www.beautyfashionshop.de/make-up/nagel/nageldekoration"><span>Nageldekoration</span></a></li><li class="nav-item level2 nav-3-4-44 classic"><a href="https://www.beautyfashionshop.de/make-up/nagel/accessoires"><span>Accessoires</span></a></li><li class="nav-item level2 nav-3-4-45 last classic"><a href="https://www.beautyfashionshop.de/make-up/nagel/gift-sets"><span>Gift Sets</span></a></li></ul></li><li class="nav-item level1 nav-3-5 last nav-item--only-subcategories parent"><a href="https://www.beautyfashionshop.de/make-up/accessoires"><span>Accessoires</span><span class="caret">&nbsp;</span></a><span class="opener"></span><ul class="level1 nav-submenu nav-panel"><li class="nav-item level2 nav-3-5-46 first classic"><a href="https://www.beautyfashionshop.de/make-up/accessoires/schwammchen"><span>Make-up Schwämmchen</span></a></li><li class="nav-item level2 nav-3-5-47 classic"><a href="https://www.beautyfashionshop.de/make-up/accessoires/combideal-penselen"><span>Kombideal Make-up Pinsel</span></a></li><li class="nav-item level2 nav-3-5-48 classic"><a href="https://www.beautyfashionshop.de/make-up/accessoires/gesichtspinsel"><span>Gesichtspinsel</span></a></li><li class="nav-item level2 nav-3-5-49 classic"><a href="https://www.beautyfashionshop.de/make-up/accessoires/augenpinsel"><span>Augenpinsel</span></a></li><li class="nav-item level2 nav-3-5-50 classic"><a href="https://www.beautyfashionshop.de/make-up/accessoires/kunstliche-wimpern"><span>Künstliche Wimpern</span></a></li><li class="nav-item level2 nav-3-5-51 classic"><a href="https://www.beautyfashionshop.de/make-up/accessoires/lippenpinsel"><span>Lippenpinsel</span></a></li><li class="nav-item level2 nav-3-5-52 classic"><a href="https://www.beautyfashionshop.de/make-up/accessoires/spitzer"><span>Anspitzer</span></a></li><li class="nav-item level2 nav-3-5-53 classic"><a href="https://www.beautyfashionshop.de/make-up/accessoires/wimpernkrummer-kamme"><span>Wimpernzangen &amp; Kämme</span></a></li><li class="nav-item level2 nav-3-5-54 classic"><a href="https://www.beautyfashionshop.de/make-up/accessoires/pinzetten"><span>Pinzetten</span></a></li><li class="nav-item level2 nav-3-5-55 classic"><a href="https://www.beautyfashionshop.de/make-up/accessoires/spiegel"><span>Spiegel</span></a></li><li class="nav-item level2 nav-3-5-56 classic"><a href="https://www.beautyfashionshop.de/make-up/accessoires/reisetasche"><span>Reiseetuis</span></a></li><li class="nav-item level2 nav-3-5-57 classic"><a href="https://www.beautyfashionshop.de/make-up/accessoires/knippers-scharen"><span>Scheren &amp; Nagelknipser</span></a></li><li class="nav-item level2 nav-3-5-58 classic"><a href="https://www.beautyfashionshop.de/make-up/accessoires/augenbrauenpinsel"><span>Augenbrauenpinsel</span></a></li><li class="nav-item level2 nav-3-5-59 classic"><a href="https://www.beautyfashionshop.de/make-up/accessoires/kwastenreiniger"><span>Kwastenreiniger</span></a></li><li class="nav-item level2 nav-3-5-60 last classic"><a href="https://www.beautyfashionshop.de/make-up/accessoires/augenbrauen-sjablonen"><span>Augenbrauen Sjablonen</span></a></li></ul></li></ul></div></div></div></li><li class="nav-item level0 nav-4 level-top nav-item--parent classic nav-item--only-subcategories parent"><a href="https://www.beautyfashionshop.de/dufte" class="level-top"><span>Düfte<span class="cat-label cat-label-label1 pin-bottom">NEU</span></span><span class="caret">&nbsp;</span></a><span class="opener"></span><ul class="level0 nav-submenu nav-panel--dropdown nav-panel"><li class="nav-item level1 nav-4-1 first classic"><a href="https://www.beautyfashionshop.de/dufte/damendufte"><span>Damendüfte</span></a></li><li class="nav-item level1 nav-4-2 classic"><a href="https://www.beautyfashionshop.de/dufte/herrendufte"><span>Herrendüfte</span></a></li><li class="nav-item level1 nav-4-3 classic"><a href="https://www.beautyfashionshop.de/dufte/unisex"><span>Unisex</span></a></li><li class="nav-item level1 nav-4-4 classic"><a href="https://www.beautyfashionshop.de/dufte/sets"><span>Sets</span></a></li><li class="nav-item level1 nav-4-5 classic"><a href="https://www.beautyfashionshop.de/dufte/duftbeutel"><span>Duftbeutel</span></a></li><li class="nav-item level1 nav-4-6 last classic"><a href="https://www.beautyfashionshop.de/dufte/duftkerzen"><span>Duftkerzen</span></a></li></ul></li><li class="nav-item level0 nav-5 level-top nav-item--parent mega nav-item--only-subcategories parent"><a href="https://www.beautyfashionshop.de/herren" class="level-top"><span>Herren</span><span class="caret">&nbsp;</span></a><span class="opener"></span><div class="nav-panel--dropdown nav-panel full-width"><div class="nav-panel-inner"><div class="nav-block--center grid12-12"><ul class="level0 nav-submenu nav-submenu--mega dd-itemgrid dd-itemgrid-4col"><li class="nav-item level1 nav-5-1 first nav-item--only-subcategories parent"><a href="https://www.beautyfashionshop.de/herren/gesicht"><span>Gesicht</span><span class="caret">&nbsp;</span></a><span class="opener"></span><ul class="level1 nav-submenu nav-panel"><li class="nav-item level2 nav-5-1-1 first classic"><a href="https://www.beautyfashionshop.de/herren/gesicht/anti-aging"><span>Anti-Aging</span></a></li><li class="nav-item level2 nav-5-1-2 classic"><a href="https://www.beautyfashionshop.de/herren/gesicht/tagespflege"><span>Tagespflege</span></a></li><li class="nav-item level2 nav-5-1-3 classic"><a href="https://www.beautyfashionshop.de/herren/gesicht/nachtpflege"><span>Nachtpflege</span></a></li><li class="nav-item level2 nav-5-1-4 classic"><a href="https://www.beautyfashionshop.de/herren/gesicht/peeling-masken"><span>Peeling &amp; Masken</span></a></li><li class="nav-item level2 nav-5-1-5 classic"><a href="https://www.beautyfashionshop.de/herren/gesicht/augenpflege"><span>Augenpflege</span></a></li><li class="nav-item level2 nav-5-1-6 classic"><a href="https://www.beautyfashionshop.de/herren/gesicht/reinigung"><span>Reinigung</span></a></li><li class="nav-item level2 nav-5-1-7 last classic"><a href="https://www.beautyfashionshop.de/herren/gesicht/serum-balsam"><span>Serum &amp; Balsam</span></a></li></ul></li><li class="nav-item level1 nav-5-2 nav-item--only-subcategories parent"><a href="https://www.beautyfashionshop.de/herren/rasieren"><span>Rasieren</span><span class="caret">&nbsp;</span></a><span class="opener"></span><ul class="level1 nav-submenu nav-panel"><li class="nav-item level2 nav-5-2-8 first classic"><a href="https://www.beautyfashionshop.de/herren/rasieren/pre-aftershave"><span>Pre- &amp; Aftershave</span></a></li><li class="nav-item level2 nav-5-2-9 classic"><a href="https://www.beautyfashionshop.de/herren/rasieren/rasierschaum-gel"><span>Rasierschaum &amp; Gel</span></a></li><li class="nav-item level2 nav-5-2-10 classic"><a href="https://www.beautyfashionshop.de/herren/rasieren/rasierol"><span>Rasieröl</span></a></li><li class="nav-item level2 nav-5-2-11 classic"><a href="https://www.beautyfashionshop.de/herren/rasieren/rasiermesser"><span>Rasiermesser</span></a></li><li class="nav-item level2 nav-5-2-12 classic"><a href="https://www.beautyfashionshop.de/herren/rasieren/rasierpinsel"><span>Rasierpinsel</span></a></li><li class="nav-item level2 nav-5-2-13 classic"><a href="https://www.beautyfashionshop.de/herren/rasieren/haartrimmer"><span>Haartrimmer</span></a></li><li class="nav-item level2 nav-5-2-14 classic"><a href="https://www.beautyfashionshop.de/herren/rasieren/barttrimmer"><span>Barttrimmer</span></a></li><li class="nav-item level2 nav-5-2-15 classic"><a href="https://www.beautyfashionshop.de/herren/rasieren/bart-schnurrbartpflege"><span>Bart- &amp; Schnurrbartpflege</span></a></li><li class="nav-item level2 nav-5-2-16 last classic"><a href="https://www.beautyfashionshop.de/herren/rasieren/accessoires"><span>Accessoires</span></a></li></ul></li><li class="nav-item level1 nav-5-3 nav-item--only-subcategories parent"><a href="https://www.beautyfashionshop.de/herren/korper"><span>Körper</span><span class="caret">&nbsp;</span></a><span class="opener"></span><ul class="level1 nav-submenu nav-panel"><li class="nav-item level2 nav-5-3-17 first classic"><a href="https://www.beautyfashionshop.de/herren/korper/dusche-bad"><span>Dusche &amp; Bad</span></a></li><li class="nav-item level2 nav-5-3-18 classic"><a href="https://www.beautyfashionshop.de/herren/korper/deodorant-dufte"><span>Deodorant &amp; Düfte</span></a></li><li class="nav-item level2 nav-5-3-19 classic"><a href="https://www.beautyfashionshop.de/herren/korper/bodylotion-ol"><span>Bodylotion &amp; Öl</span></a></li><li class="nav-item level2 nav-5-3-20 last classic"><a href="https://www.beautyfashionshop.de/herren/korper/pflegesets"><span>Pflegesets</span></a></li></ul></li><li class="nav-item level1 nav-5-4 last nav-item--only-subcategories parent"><a href="https://www.beautyfashionshop.de/herren/haar"><span>Haar</span><span class="caret">&nbsp;</span></a><span class="opener"></span><ul class="level1 nav-submenu nav-panel"><li class="nav-item level2 nav-5-4-21 first classic"><a href="https://www.beautyfashionshop.de/herren/haar/shampoo"><span>Shampoo</span></a></li><li class="nav-item level2 nav-5-4-22 classic"><a href="https://www.beautyfashionshop.de/herren/haar/pflegespulung"><span>Pflegespülung</span></a></li><li class="nav-item level2 nav-5-4-23 classic"><a href="https://www.beautyfashionshop.de/herren/haar/gel"><span>Gel</span></a></li><li class="nav-item level2 nav-5-4-24 classic"><a href="https://www.beautyfashionshop.de/herren/haar/wachs"><span>Wachs</span></a></li><li class="nav-item level2 nav-5-4-25 classic"><a href="https://www.beautyfashionshop.de/herren/haar/pomade"><span>Pomade</span></a></li><li class="nav-item level2 nav-5-4-26 classic"><a href="https://www.beautyfashionshop.de/herren/haar/styling"><span>Styling</span></a></li><li class="nav-item level2 nav-5-4-27 last classic"><a href="https://www.beautyfashionshop.de/herren/haar/hair-paste"><span>Hair Paste</span></a></li></ul></li></ul></div></div></div></li><li class="nav-item level0 nav-6 level-top nav-item--parent mega nav-item--only-subcategories parent"><a href="https://www.beautyfashionshop.de/accessoires" class="level-top"><span>Accessoires</span><span class="caret">&nbsp;</span></a><span class="opener"></span><div class="nav-panel--dropdown nav-panel full-width"><div class="nav-panel-inner"><div class="nav-block--center grid12-12"><ul class="level0 nav-submenu nav-submenu--mega dd-itemgrid dd-itemgrid-4col"><li class="nav-item level1 nav-6-1 first"><a href="https://www.beautyfashionshop.de/accessoires/pinzetten"><span>Pinzetten</span></a></li><li class="nav-item level1 nav-6-2"><a href="https://www.beautyfashionshop.de/accessoires/bursten-und-kamme"><span>Bürsten und Kämme</span></a></li><li class="nav-item level1 nav-6-3"><a href="https://www.beautyfashionshop.de/accessoires/spiegel"><span>Spiegel</span></a></li><li class="nav-item level1 nav-6-4"><a href="https://www.beautyfashionshop.de/accessoires/reisetasche"><span>Reisesets</span></a></li><li class="nav-item level1 nav-6-5"><a href="https://www.beautyfashionshop.de/accessoires/lichttherapie"><span>Lichttherapie</span></a></li><li class="nav-item level1 nav-6-6"><a href="https://www.beautyfashionshop.de/accessoires/schneider-scheren"><span>Scheren &amp; Nagelknipser</span></a></li><li class="nav-item level1 nav-6-7"><a href="https://www.beautyfashionshop.de/accessoires/gesichtspinsel"><span>Gesichtspinsel</span></a></li><li class="nav-item level1 nav-6-8"><a href="https://www.beautyfashionshop.de/accessoires/wimpernkrummer-kamme"><span>Wimpernzangen &amp; -Kämme</span></a></li><li class="nav-item level1 nav-6-9"><a href="https://www.beautyfashionshop.de/accessoires/spitzer"><span>Anspitzer</span></a></li><li class="nav-item level1 nav-6-10"><a href="https://www.beautyfashionshop.de/accessoires/augenbraue"><span>Augenbraue</span></a></li><li class="nav-item level1 nav-6-11"><a href="https://www.beautyfashionshop.de/accessoires/lippenpinsel"><span>Lippenpinsel</span></a></li><li class="nav-item level1 nav-6-12"><a href="https://www.beautyfashionshop.de/accessoires/falsche-wimpern"><span>Falsche Wimpern</span></a></li><li class="nav-item level1 nav-6-13"><a href="https://www.beautyfashionshop.de/accessoires/augenpinsel"><span>Augenpinsel</span></a></li><li class="nav-item level1 nav-6-14"><a href="https://www.beautyfashionshop.de/accessoires/schwammchen"><span>Make-up Schwämmchen</span></a></li><li class="nav-item level1 nav-6-15"><a href="https://www.beautyfashionshop.de/accessoires/hand-fuss"><span>Hand &amp; Fuß</span></a></li><li class="nav-item level1 nav-6-16"><a href="https://www.beautyfashionshop.de/accessoires/geurkaarsen"><span>Geurkaarsen</span></a></li><li class="nav-item level1 nav-6-17 last"><a href="https://www.beautyfashionshop.de/accessoires/geurzakjes"><span>Geurzakjes</span></a></li></ul></div></div></div></li><li class="nav-item level0 nav-7 level-top nav-item--parent mega nav-item--only-subcategories parent"><a href="https://www.beautyfashionshop.de/haare" class="level-top"><span>Haare</span><span class="caret">&nbsp;</span></a><span class="opener"></span><div class="nav-panel--dropdown nav-panel full-width"><div class="nav-panel-inner"><div class="nav-block--center grid12-12"><ul class="level0 nav-submenu nav-submenu--mega dd-itemgrid dd-itemgrid-4col"><li class="nav-item level1 nav-7-1 first nav-item--only-subcategories parent"><a href="https://www.beautyfashionshop.de/haare/pflege"><span>Pflege</span><span class="caret">&nbsp;</span></a><span class="opener"></span><ul class="level1 nav-submenu nav-panel"><li class="nav-item level2 nav-7-1-1 first classic"><a href="https://www.beautyfashionshop.de/haare/pflege/shampoo"><span>Shampoo</span></a></li><li class="nav-item level2 nav-7-1-2 classic"><a href="https://www.beautyfashionshop.de/haare/pflege/zilvershampoo"><span>Zilvershampoo</span></a></li><li class="nav-item level2 nav-7-1-3 classic"><a href="https://www.beautyfashionshop.de/haare/pflege/droogshampoo"><span>Droogshampoo</span></a></li><li class="nav-item level2 nav-7-1-4 classic"><a href="https://www.beautyfashionshop.de/haare/pflege/conditioner"><span>Conditioner</span></a></li><li class="nav-item level2 nav-7-1-5 classic"><a href="https://www.beautyfashionshop.de/haare/pflege/leave-in-conditioner"><span>Leave-in Conditioner</span></a></li><li class="nav-item level2 nav-7-1-6 classic"><a href="https://www.beautyfashionshop.de/haare/pflege/haarserum"><span>Haarserum</span></a></li><li class="nav-item level2 nav-7-1-7 classic"><a href="https://www.beautyfashionshop.de/haare/pflege/haarmaske"><span>Haarmaske</span></a></li><li class="nav-item level2 nav-7-1-8 classic"><a href="https://www.beautyfashionshop.de/haare/pflege/haarol"><span>Haaröl</span></a></li><li class="nav-item level2 nav-7-1-9 classic"><a href="https://www.beautyfashionshop.de/haare/pflege/haarcreme"><span>Haarcreme</span></a></li><li class="nav-item level2 nav-7-1-10 classic"><a href="https://www.beautyfashionshop.de/haare/pflege/antiklit-spray-creme"><span>Antiklit Spray &amp; Créme</span></a></li><li class="nav-item level2 nav-7-1-11 classic"><a href="https://www.beautyfashionshop.de/haare/pflege/parfum"><span>Parfüm</span></a></li><li class="nav-item level2 nav-7-1-12 classic"><a href="https://www.beautyfashionshop.de/haare/pflege/hitzeschutz"><span>Hitzeschutz</span></a></li><li class="nav-item level2 nav-7-1-13 classic"><a href="https://www.beautyfashionshop.de/haare/pflege/zonbescherming"><span>Zonbescherming</span></a></li><li class="nav-item level2 nav-7-1-14 last classic"><a href="https://www.beautyfashionshop.de/haare/pflege/treatment"><span>Treatment</span></a></li></ul></li><li class="nav-item level1 nav-7-2 nav-item--only-subcategories parent"><a href="https://www.beautyfashionshop.de/haare/styling"><span>Styling</span><span class="caret">&nbsp;</span></a><span class="opener"></span><ul class="level1 nav-submenu nav-panel"><li class="nav-item level2 nav-7-2-15 first classic"><a href="https://www.beautyfashionshop.de/haare/styling/gel"><span>Gel</span></a></li><li class="nav-item level2 nav-7-2-16 classic"><a href="https://www.beautyfashionshop.de/haare/styling/wachs"><span>Wachs</span></a></li><li class="nav-item level2 nav-7-2-17 classic"><a href="https://www.beautyfashionshop.de/haare/styling/pomade"><span>Pomade</span></a></li><li class="nav-item level2 nav-7-2-18 classic"><a href="https://www.beautyfashionshop.de/haare/styling/mousse"><span>Mousse</span></a></li><li class="nav-item level2 nav-7-2-19 classic"><a href="https://www.beautyfashionshop.de/haare/styling/tonerde"><span>Tonerde</span></a></li><li class="nav-item level2 nav-7-2-20 classic"><a href="https://www.beautyfashionshop.de/haare/styling/volumenpuder"><span>Volumenpuder</span></a></li><li class="nav-item level2 nav-7-2-21 classic"><a href="https://www.beautyfashionshop.de/haare/styling/haarspray"><span>Haarspray</span></a></li><li class="nav-item level2 nav-7-2-22 classic"><a href="https://www.beautyfashionshop.de/haare/styling/styling-creme-spray"><span>Styling Créme &amp; Spray</span></a></li><li class="nav-item level2 nav-7-2-23 last classic"><a href="https://www.beautyfashionshop.de/haare/styling/texturspray"><span>Texturspray</span></a></li></ul></li><li class="nav-item level1 nav-7-3 nav-item--only-subcategories parent"><a href="https://www.beautyfashionshop.de/haare/accessoires"><span>Accessoires</span><span class="caret">&nbsp;</span></a><span class="opener"></span><ul class="level1 nav-submenu nav-panel"><li class="nav-item level2 nav-7-3-24 first classic"><a href="https://www.beautyfashionshop.de/haare/accessoires/fohn"><span>Föhn</span></a></li><li class="nav-item level2 nav-7-3-25 classic"><a href="https://www.beautyfashionshop.de/haare/accessoires/fohnburste"><span>Föhnbürste</span></a></li><li class="nav-item level2 nav-7-3-26 classic"><a href="https://www.beautyfashionshop.de/haare/accessoires/glatteisen"><span>Glätteisen</span></a></li><li class="nav-item level2 nav-7-3-27 classic"><a href="https://www.beautyfashionshop.de/haare/accessoires/lockenstab"><span>Lockenstab</span></a></li><li class="nav-item level2 nav-7-3-28 classic"><a href="https://www.beautyfashionshop.de/haare/accessoires/burste"><span>Bürste</span></a></li><li class="nav-item level2 nav-7-3-29 classic"><a href="https://www.beautyfashionshop.de/haare/accessoires/haargummis"><span>Haargummis</span></a></li><li class="nav-item level2 nav-7-3-30 classic"><a href="https://www.beautyfashionshop.de/haare/accessoires/stijlborstel"><span>Stijlborstel</span></a></li><li class="nav-item level2 nav-7-3-31 classic"><a href="https://www.beautyfashionshop.de/haare/accessoires/wafeltang"><span>Wafeltang</span></a></li><li class="nav-item level2 nav-7-3-32 classic"><a href="https://www.beautyfashionshop.de/haare/accessoires/haarvitamines"><span>Haarvitamines</span></a></li><li class="nav-item level2 nav-7-3-33 last classic"><a href="https://www.beautyfashionshop.de/haare/accessoires/krulsets"><span>Krulsets</span></a></li></ul></li><li class="nav-item level1 nav-7-4 last nav-item--only-subcategories parent"><a href="https://www.beautyfashionshop.de/haare/verven"><span>Verven</span><span class="caret">&nbsp;</span></a><span class="opener"></span><ul class="level1 nav-submenu nav-panel"><li class="nav-item level2 nav-7-4-34 first classic"><a href="https://www.beautyfashionshop.de/haare/verven/henna-haarverf"><span>Henna Haarverf</span></a></li><li class="nav-item level2 nav-7-4-35 classic"><a href="https://www.beautyfashionshop.de/haare/verven/temporare-haartonung"><span>(temporäre) Haartönung</span></a></li><li class="nav-item level2 nav-7-4-36 classic"><a href="https://www.beautyfashionshop.de/haare/verven/accessoires"><span>Accessoires</span></a></li><li class="nav-item level2 nav-7-4-37 last classic"><a href="https://www.beautyfashionshop.de/haare/verven/haaruitgroei"><span>Haaruitgroei</span></a></li></ul></li></ul></div></div></div></li><li class="nav-item level0 nav-8 level-top nav-item--parent classic nav-item--only-subcategories parent"><a href="https://www.beautyfashionshop.de/gifts" class="level-top"><span>Gifts</span><span class="caret">&nbsp;</span></a><span class="opener"></span><ul class="level0 nav-submenu nav-panel--dropdown nav-panel"><li class="nav-item level1 nav-8-1 first classic"><a href="https://www.beautyfashionshop.de/gifts/gift-sets"><span>Gift Sets</span></a></li><li class="nav-item level1 nav-8-2 classic"><a href="https://www.beautyfashionshop.de/gifts/duo-packs"><span>Duo Packs</span></a></li><li class="nav-item level1 nav-8-3 classic"><a href="https://www.beautyfashionshop.de/gifts/cadeaubonnen"><span>Cadeaubonnen</span></a></li><li class="nav-item level1 nav-8-4 classic"><a href="https://www.beautyfashionshop.de/gifts/cadeaus-0-10"><span>Cadeaus €0 - €10</span></a></li><li class="nav-item level1 nav-8-5 classic"><a href="https://www.beautyfashionshop.de/gifts/cadeaus-10-25"><span>Cadeaus €10 - €25</span></a></li><li class="nav-item level1 nav-8-6 classic"><a href="https://www.beautyfashionshop.de/gifts/cadeaus-25-50"><span>Cadeaus €25 - €50</span></a></li><li class="nav-item level1 nav-8-7 last classic"><a href="https://www.beautyfashionshop.de/gifts/cadeaus-50-100"><span>Cadeaus €50 - €100</span></a></li></ul></li><li class="nav-item level0 nav-9 level-top nav-item--parent mega nav-item--only-subcategories parent"><a href="https://www.beautyfashionshop.de/naturkosmetik" class="level-top"><span>Naturkosmetik</span><span class="caret">&nbsp;</span></a><span class="opener"></span><div class="nav-panel--dropdown nav-panel full-width"><div class="nav-panel-inner"><div class="nav-block--center grid12-12"><ul class="level0 nav-submenu nav-submenu--mega dd-itemgrid dd-itemgrid-3col"><li class="nav-item level1 nav-9-1 first nav-item--only-subcategories parent"><a href="https://www.beautyfashionshop.de/naturkosmetik/vegane-kosmetik"><span>Vegane Kosmetik</span><span class="caret">&nbsp;</span></a><span class="opener"></span><ul class="level1 nav-submenu nav-panel"><li class="nav-item level2 nav-9-1-1 first classic"><a href="https://www.beautyfashionshop.de/naturkosmetik/vegane-kosmetik/veganes-makeup"><span>Veganes Make-up</span></a></li><li class="nav-item level2 nav-9-1-2 classic"><a href="https://www.beautyfashionshop.de/naturkosmetik/vegane-kosmetik/vegane-hautpflege"><span>Vegane Hautpflege</span></a></li><li class="nav-item level2 nav-9-1-3 last classic"><a href="https://www.beautyfashionshop.de/naturkosmetik/vegane-kosmetik/veganer-nagellack"><span>Veganer Nagellack</span></a></li></ul></li><li class="nav-item level1 nav-9-2 nav-item--only-subcategories parent"><a href="https://www.beautyfashionshop.de/naturkosmetik/bio-kosmetik"><span>Bio Kosmetik</span><span class="caret">&nbsp;</span></a><span class="opener"></span><ul class="level1 nav-submenu nav-panel"><li class="nav-item level2 nav-9-2-4 first classic"><a href="https://www.beautyfashionshop.de/naturkosmetik/bio-kosmetik/bio-makeup"><span>Bio Make-up</span></a></li><li class="nav-item level2 nav-9-2-5 last classic"><a href="https://www.beautyfashionshop.de/naturkosmetik/bio-kosmetik/bio-hautpflege"><span>Bio Hautpflege</span></a></li></ul></li><li class="nav-item level1 nav-9-3 last nav-item--only-subcategories parent"><a href="https://www.beautyfashionshop.de/naturkosmetik/naturliche-kosmetik"><span>Natürliche Kosmetik</span><span class="caret">&nbsp;</span></a><span class="opener"></span><ul class="level1 nav-submenu nav-panel"><li class="nav-item level2 nav-9-3-6 first classic"><a href="https://www.beautyfashionshop.de/naturkosmetik/naturliche-kosmetik/naturliches-makeup"><span>Natürliches Make-up</span></a></li><li class="nav-item level2 nav-9-3-7 classic"><a href="https://www.beautyfashionshop.de/naturkosmetik/naturliche-kosmetik/naturliche-hautpflege"><span>Natürliche Hautpflege</span></a></li><li class="nav-item level2 nav-9-3-8 classic"><a href="https://www.beautyfashionshop.de/naturkosmetik/naturliche-kosmetik/naturlicher-nagellack-und-nagelpflege"><span>Natürlicher Nagellack und Nagelpflege</span></a></li><li class="nav-item level2 nav-9-3-9 classic"><a href="https://www.beautyfashionshop.de/naturkosmetik/naturliche-kosmetik/naturliches-deo"><span>Natürliches Deo</span></a></li><li class="nav-item level2 nav-9-3-10 classic"><a href="https://www.beautyfashionshop.de/naturkosmetik/naturliche-kosmetik/naturliche-haarfarbe"><span>Natürliche Haarfarbe</span></a></li><li class="nav-item level2 nav-9-3-11 classic"><a href="https://www.beautyfashionshop.de/naturkosmetik/naturliche-kosmetik/naturliche-dufte"><span>Natürliche Düfte</span></a></li><li class="nav-item level2 nav-9-3-12 classic"><a href="https://www.beautyfashionshop.de/naturkosmetik/naturliche-kosmetik/naturliche-haarpflege"><span>Natürliche Haarpflege</span></a></li><li class="nav-item level2 nav-9-3-13 classic"><a href="https://www.beautyfashionshop.de/naturkosmetik/naturliche-kosmetik/naturlicher-sonnenschutz"><span>Natürlicher Sonnenschutz</span></a></li><li class="nav-item level2 nav-9-3-14 classic"><a href="https://www.beautyfashionshop.de/naturkosmetik/naturliche-kosmetik/naturliche-pflege-baby-kind"><span>Natürliche Pflege Baby &amp; Kind</span></a></li><li class="nav-item level2 nav-9-3-15 classic"><a href="https://www.beautyfashionshop.de/naturkosmetik/naturliche-kosmetik/naturseife"><span>Naturseife</span></a></li><li class="nav-item level2 nav-9-3-16 classic"><a href="https://www.beautyfashionshop.de/naturkosmetik/naturliche-kosmetik/naturliche-accessoires"><span>Natürliche Accessoires</span></a></li><li class="nav-item level2 nav-9-3-17 last classic"><a href="https://www.beautyfashionshop.de/naturkosmetik/naturliche-kosmetik/naturkosmetik-geschenksets"><span>Naturkosmetik Geschenksets</span></a></li></ul></li></ul></div></div></div></li><li class="nav-item level0 nav-10 level-top last classic"><a href="https://www.beautyfashionshop.de/sale" class="level-top"><span>Sale<span class="cat-label cat-label-label2 pin-bottom">Letzte Chance</span></span></a></li>
+</ul>
+<div class="nav-border-bottom"></div>
+<script type="text/javascript">
+	//<![CDATA[
+
+
+
+		var MegaMenu = {
+
+			mobileMenuThreshold: 960			, bar: jQuery('#nav')
+			, panels: null
+			, mobnavTriggerWrapper: null
+			, itemSelector: 'li'
+			, panelSelector: '.nav-panel'
+			, openerSelector: '.opener'
+			, isTouchDevice: ('ontouchstart' in window) || (navigator.msMaxTouchPoints > 0)
+			, ddDelayIn: 50
+			, ddDelayOut: 200
+			, ddAnimationDurationIn: 50
+			, ddAnimationDurationOut: 200
+
+			, init : function()
+			{
+				MegaMenu.panels = MegaMenu.bar.find(MegaMenu.panelSelector);
+				MegaMenu.mobnavTriggerWrapper = jQuery('.mobnav-trigger-wrapper');
+			}
+
+			, initDualMode : function()
+			{
+				MegaMenu.init();
+
+				if (jQuery('#nav-holders-wrapper-mobile').length)
+				{
+					MegaMenu.hookToModeChange(); //Hook to events only if necessary (if holders wrapper exists)
+				}
+
+				MegaMenu.bar.accordion(MegaMenu.panelSelector, MegaMenu.openerSelector, MegaMenu.itemSelector);
+				if (jQuery(window).width() >= MegaMenu.mobileMenuThreshold)
+				{
+					MegaMenu.cleanUpAfterMobileMenu(); //Required for IE8
+				}
+
+				enquire
+					.register('screen and (max-width: ' + (MegaMenu.mobileMenuThreshold - 1) + 'px)', {
+						match: MegaMenu.activateMobileMenu,
+						unmatch: MegaMenu.cleanUpAfterMobileMenu
+					})
+					.register('screen and (min-width: ' + MegaMenu.mobileMenuThreshold + 'px)', {
+						deferSetup: true,
+						setup: MegaMenu.cleanUpAfterMobileMenu,
+						match: MegaMenu.activateRegularMenu,
+						unmatch: MegaMenu.prepareMobileMenu
+					});
+			}
+
+			, initMobileMode : function()
+			{
+				MegaMenu.init();
+				MegaMenu.bar.accordion(MegaMenu.panelSelector, MegaMenu.openerSelector, MegaMenu.itemSelector);
+				MegaMenu.activateMobileMenu();
+			}
+
+			, activateMobileMenu : function()
+			{
+				MegaMenu.mobnavTriggerWrapper.show();
+				MegaMenu.bar.addClass('nav-mobile acco').removeClass('nav-regular');
+
+				jQuery(document).trigger("activate-mobile-menu"); ///
+			}
+
+			, activateRegularMenu : function() //Default state
+			{
+				MegaMenu.bar.addClass('nav-regular').removeClass('nav-mobile acco');
+				MegaMenu.mobnavTriggerWrapper.hide();
+
+				jQuery(document).trigger("activate-regular-menu"); ///
+			}
+
+			, cleanUpAfterMobileMenu : function()
+			{
+								MegaMenu.panels.css('display', '');
+			}
+
+			, prepareMobileMenu : function()
+			{
+								MegaMenu.panels.hide();
+
+								MegaMenu.bar.find('.item-active').each( function() {
+					jQuery(this).children('.nav-panel').show();
+				});
+			}
+
+			, hookToModeChange : function()
+			{
+				//Move holders to temporary container
+				jQuery(document).on('activate-mobile-menu', function(e, data) {
+
+					//Important: move in inverted order
+					jQuery('#nav-holders-wrapper-mobile').prepend(jQuery('#nav-holder1, #nav-holder2, #nav-holder3'));
+
+				}); //end: on event
+
+				//Move holders back to the menu bar
+				jQuery(document).on('activate-regular-menu', function(e, data) {
+
+					//Move holders back to the menu only if holders are NOT in the menu yet.
+					//Important: needed on initialization of the menu in regular mode.
+					if (jQuery('#nav-holder1').parent().is('#nav') === false)
+					{
+						//Important: move in inverted order
+						jQuery('#nav').prepend(jQuery('#nav-holder1, #nav-holder2, #nav-holder3'));
+					}
+
+				}); //end: on event
+			}
+
+		}; //end: MegaMenu
+
+
+
+		
+					MegaMenu.initDualMode();
+		
+		//Toggle mobile menu
+		jQuery('a.mobnav-trigger').on('click', function(e) {
+			e.preventDefault();
+			if (jQuery(this).hasClass('active'))
+			{
+				MegaMenu.bar.removeClass('show');
+				jQuery(this).removeClass('active');
+			}
+			else
+			{
+				MegaMenu.bar.addClass('show');
+				jQuery(this).addClass('active');					
+			}
+		}).click();
+
+	
+
+
+		
+		jQuery(function($) {
+
+			var menubar = MegaMenu.bar;
+
+						menubar.on('click', '.no-click', function(e) {
+				e.preventDefault();
+			});
+
+						menubar.on('mouseenter', 'li.parent.level0', function() {
+				
+				if (false === menubar.hasClass('nav-mobile'))
+				{
+					var item = $(this);
+					var dd = item.children('.nav-panel');
+
+					var itemPos = item.position();
+					var ddPos = { left: itemPos.left, top: itemPos.top + item.height() };
+					if (dd.hasClass('full-width')) { ddPos.left = 0; }
+
+															dd.removeClass('tmp-full-width');
+
+									var ddConOffset = 0;
+					var outermostCon = menubar;
+				
+					var outermostContainerWidth = outermostCon.width();
+					var ddOffset = ddConOffset + ddPos.left;
+					var ddWidth = dd.outerWidth();
+
+										if ((ddOffset + ddWidth) > outermostContainerWidth)
+					{
+												var diff = (ddOffset + ddWidth) - outermostContainerWidth;
+						var ddPosLeft_NEW = ddPos.left - diff;
+
+												var ddOffset_NEW = ddOffset - diff;
+
+												if (ddOffset_NEW < 0)
+						{
+														dd.addClass('tmp-full-width');
+							ddPos.left = 0;
+						}
+						else
+						{
+														ddPos.left = ddPosLeft_NEW;
+						}
+					}
+					
+					dd
+						.css({
+							'left' : ddPos.left + 'px',
+							'top'  : ddPos.top + 'px'
+						})
+						.stop(true, true).delay(MegaMenu.ddDelayIn).fadeIn(MegaMenu.ddAnimationDurationIn, "easeOutCubic");
+				}
+
+			}).on('mouseleave', 'li.parent.level0', function() {
+				
+				if (false === menubar.hasClass('nav-mobile'))
+				{
+					$(this).children(".nav-panel")
+					.stop(true, true).delay(MegaMenu.ddDelayOut).fadeOut(MegaMenu.ddAnimationDurationOut, "easeInCubic");
+				}
+
+			}); //end: menu top-level dropdowns
+
+		}); //end: on document ready
+
+		jQuery(window).on("load", function() {
+
+			var menubar = MegaMenu.bar;
+
+			if (MegaMenu.isTouchDevice)
+			{
+				menubar.on('click', 'a', function(e) {
+
+					link = jQuery(this);
+					if (!menubar.hasClass('nav-mobile') && link.parent().hasClass('nav-item--parent'))
+					{
+						if (!link.hasClass('ready'))
+						{
+							e.preventDefault();
+							menubar.find('.ready').removeClass('ready');
+							link.parents('li').children('a').addClass('ready');
+						}
+					}
+
+				}); //end: on click
+			} //end: if isTouchDevice
+
+		}); //end: on load
+
+	
+
+
+	//]]>
+	</script>
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+</div> 
+<script type="text/javascript">
+//<![CDATA[
+
+		
+		var SmartHeader = {
+
+			mobileHeaderThreshold : 770
+			, rootContainer : jQuery('.header-container')
+
+			, init : function()
+			{
+				enquire.register('(max-width: ' + (SmartHeader.mobileHeaderThreshold - 1) + 'px)', {
+					match: SmartHeader.moveElementsToMobilePosition,
+					unmatch: SmartHeader.moveElementsToRegularPosition
+				});
+			}
+
+			, activateMobileHeader : function()
+			{
+				SmartHeader.rootContainer.addClass('header-mobile').removeClass('header-regular');
+			}
+
+			, activateRegularHeader : function()
+			{
+				SmartHeader.rootContainer.addClass('header-regular').removeClass('header-mobile');
+			}
+
+			, moveElementsToMobilePosition : function()
+			{
+				SmartHeader.activateMobileHeader();
+
+				//Move cart
+				jQuery('#mini-cart-wrapper-mobile').prepend(jQuery('#mini-cart'));
+
+			
+							//Move User Menu
+				jQuery('#user-menu-wrapper-mobile').prepend(jQuery('#user-menu'));
+			
+			
+				//Reset active state
+				jQuery('.skip-active').removeClass('skip-active');
+				
+				//Disable dropdowns
+				jQuery('#mini-cart').removeClass('dropdown');
+				jQuery('#mini-compare').removeClass('dropdown');
+
+				//Clean up after dropdowns: reset the "display" property
+				jQuery('#header-cart').css('display', '');
+				jQuery('#header-compare').css('display', '');
+
+			}
+
+			, moveElementsToRegularPosition : function()
+			{
+				SmartHeader.activateRegularHeader();
+
+				//Move cart
+				jQuery('#mini-cart-wrapper-regular').prepend(jQuery('#mini-cart'));
+
+			
+							//Move User Menu
+				jQuery('#user-menu-wrapper-regular').prepend(jQuery('#user-menu'));
+			
+			
+				//Reset active state
+				jQuery('.skip-active').removeClass('skip-active');
+
+				//Enable dropdowns
+				jQuery('#mini-cart').addClass('dropdown');
+				jQuery('#mini-compare').addClass('dropdown');
+			}
+
+		}; //end: SmartHeader
+
+		//Important: mobile header code must be executed before sticky header code
+		SmartHeader.init();
+
+		jQuery(function($) {
+
+			//Skip Links
+			var skipContents = $('.skip-content');
+			var skipLinks = $('.skip-link');
+
+			skipLinks.on('click', function (e) {
+				e.preventDefault();
+
+				var self = $(this);
+				var target = self.attr('href');
+
+				//Get target element
+				var elem = $(target);
+
+				//Check if stub is open
+				var isSkipContentOpen = elem.hasClass('skip-active') ? 1 : 0;
+
+				//Hide all stubs
+				skipLinks.removeClass('skip-active');
+				skipContents.removeClass('skip-active');
+
+				//Toggle stubs
+				if (isSkipContentOpen) {
+					self.removeClass('skip-active');
+				} else {
+					self.addClass('skip-active');
+					elem.addClass('skip-active');
+				}
+			});
+
+		}); //end: on document ready
+
+	
+
+
+		
+		jQuery(function($) {
+
+			var StickyHeader = {
+
+				stickyThreshold : 960 
+				, isSticky : false
+				, isSuspended : false
+				, headerContainer : $('.header-container')
+				, stickyContainer : $('.sticky-container')	//.nav-container
+				, stickyContainerOffsetTop : 55 //Position of the bottom edge of the sticky container relative to the viewport
+				, requiredRecalculation : false //Flag: required recalculation of the position of the bottom edge of the sticky container
+
+				, calculateStickyContainerOffsetTop : function()
+				{
+					//Calculate the position of the bottom edge of the sticky container relative to the viewport
+					StickyHeader.stickyContainerOffsetTop = 
+						StickyHeader.stickyContainer.offset().top + StickyHeader.stickyContainer.outerHeight();
+
+					//Important: disable flag
+					StickyHeader.requiredRecalculation = false;
+				}
+
+				, init : function()
+				{
+					StickyHeader.hookToActivatedDeactivated(); //Important: call before activateSticky is called
+					StickyHeader.calculateStickyContainerOffsetTop();
+					StickyHeader.applySticky();
+					StickyHeader.hookToScroll();
+					StickyHeader.hookToResize();
+
+					if (StickyHeader.stickyThreshold > 0)
+					{
+						enquire.register('(max-width: ' + (StickyHeader.stickyThreshold - 1) + 'px)', {
+							match: StickyHeader.suspendSticky,
+							unmatch: StickyHeader.unsuspendSticky
+						});
+					}
+				}
+
+				, applySticky : function()
+				{
+					if (StickyHeader.isSuspended) return;
+
+					//If recalculation required
+					if (StickyHeader.requiredRecalculation)
+					{
+						//Important: recalculate only when header is not sticky
+						if (!StickyHeader.isSticky)
+						{
+							StickyHeader.calculateStickyContainerOffsetTop();
+						}
+					}
+
+					var viewportOffsetTop = $(window).scrollTop();
+					if (viewportOffsetTop > StickyHeader.stickyContainerOffsetTop)
+					{
+						if (!StickyHeader.isSticky)
+						{
+							StickyHeader.activateSticky();
+						}
+					}
+					else
+					{
+						if (StickyHeader.isSticky)
+						{
+							StickyHeader.deactivateSticky();
+						}
+					}
+				}
+
+				, activateSticky : function()
+				{
+					var stickyContainerHeight = StickyHeader.stickyContainer.outerHeight();
+					var originalHeaderHeight = StickyHeader.headerContainer.css('height');
+
+					//Compensate the change of the header height after the sticky container was removed from its normal position
+					StickyHeader.headerContainer.css('height', originalHeaderHeight);
+
+					//Trigger even just before making the header sticky
+					$(document).trigger("sticky-header-before-activated");
+
+					//Make the header sticky
+					StickyHeader.headerContainer.addClass('sticky-header');
+					StickyHeader.isSticky = true;
+
+					//Effect
+					StickyHeader.stickyContainer.css('margin-top', '-' + stickyContainerHeight + 'px').animate({'margin-top': '0'}, 200, 'easeOutCubic');
+					//StickyHeader.stickyContainer.css('opacity', '0').animate({'opacity': '1'}, 300, 'easeOutCubic');
+				}
+
+				, deactivateSticky : function()
+				{
+					//Remove the compensation of the header height change
+					StickyHeader.headerContainer.css('height', '');
+
+					StickyHeader.headerContainer.removeClass('sticky-header');
+					StickyHeader.isSticky = false;
+
+					$(document).trigger("sticky-header-deactivated");
+				}
+
+				, suspendSticky : function()
+				{
+					StickyHeader.isSuspended = true;
+
+					//Deactivate sticky header.
+					//Important: call method only when sticky header is actually active.
+					if (StickyHeader.isSticky)
+					{
+						StickyHeader.deactivateSticky();
+					}
+				}
+
+				, unsuspendSticky : function()
+				{
+					StickyHeader.isSuspended = false;
+
+					//Activate sticky header.
+					//Important: call applySticky instead of activateSticky to check if activation is needed.
+					StickyHeader.applySticky();
+				}
+
+				, hookToScroll : function()
+				{
+					$(window).on("scroll", StickyHeader.applySticky);
+				}
+
+				, hookToScrollDeferred : function()
+				{
+					var windowScrollTimeout;
+					$(window).on("scroll", function() {
+						clearTimeout(windowScrollTimeout);
+						windowScrollTimeout = setTimeout(function() {
+							StickyHeader.applySticky();
+						}, 50);
+					});
+				}
+
+				, hookToResize : function()
+				{
+					$(window).on('themeResize', function(e) {
+
+						//Require recalculation
+						StickyHeader.requiredRecalculation = true;
+
+						//Remove the compensation of the header height change
+						StickyHeader.headerContainer.css('height', '');
+					});
+				}
+
+				, hookToActivatedDeactivated : function()
+				{
+					//Move elements to sticky header
+					$(document).on('sticky-header-before-activated', function(e, data) {
+
+						//Move mini cart to sticky header but only if mini cart is NOT yet inside the holder
+						//(if parent of parent doesn't have class "nav-holder").
+						if (jQuery('#mini-cart').parent().parent().hasClass('nav-holder') === false)
+						{
+							jQuery('#nav-holder1').prepend(jQuery('#mini-cart'));
+						}
+
+						//Move mini compare to sticky header but only if mini compare is NOT yet inside the holder
+						//(if parent of parent doesn't have class "nav-holder").
+						if (jQuery('#mini-compare').parent().parent().hasClass('nav-holder') === false)
+						{
+							jQuery('#nav-holder2').prepend(jQuery('#mini-compare'));
+						}
+
+					}); //end: on event
+
+					//Move elements from sticky header to normal position
+					$(document).on('sticky-header-deactivated', function(e, data) {
+
+						//Move mini cart back to the regular container but only if mini cart is directly inside the holder
+						if (jQuery('#mini-cart').parent().hasClass('nav-holder'))
+						{
+							jQuery('#mini-cart-wrapper-regular').prepend(jQuery('#mini-cart'));
+						}
+
+						//Move mini compare back to the regular container but only if mini compare is directly inside the holder
+						if (jQuery('#mini-compare').parent().hasClass('nav-holder'))
+						{
+							jQuery('#mini-compare-wrapper-regular').prepend(jQuery('#mini-compare'));
+						}
+
+					}); //end: on event
+				}
+
+			}; //end: StickyHeader
+
+			StickyHeader.init();
+
+		}); //end: on document ready
+
+	
+//]]>
+</script>
+<div class="main-container col1-layout">
+<div class="main-before-top-container"></div>
+<div class="main container">
+<div class="inner-container">
+<div class="breadcrumbs">
+<ul>
+<li class="home" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+<a href="https://www.beautyfashionshop.de/" title="Start" itemprop="url"><span itemprop="title">Start</span></a>
+<span class="sep"></span>
+</li>
+<li class="product">
+<span class="last-crumb">Anastasia Soft Glam Eye Shadow Palette</span>
+</li>
+</ul>
+</div>
+<div class="preface"></div>
+<div class="col-main">
+<style>
+        #confirmButtons button,
+        #confirmButtons button > span {
+            color: #FFFFFF;
+        }
+
+        #confirmBox,
+        #am-a-count.link {
+            color: #000000;
+        }
+
+        div#confirmBox,
+        .am-related-title > .am-title {
+            background-color: #FFFFFF;
+        }
+
+        #confirmBox .amcart-title a{
+            color: #000000;
+        }
+
+        #confirmButtons button.am-btn-left:active
+        {
+            background-color: #c5c5c5;
+        }
+
+        #confirmButtons button.am-btn-left:hover
+        {
+            background-color: #a8a8a8;
+        }
+
+        #confirmButtons button.am-btn-left
+        {
+            background-color: #C5C5C5;
+            -webkit-transition: all .3s ease;
+            transition: all .3s ease;
+        }
+        /**right*/
+        #confirmButtons button.am-btn-right:active
+        {
+            background-color: #09bb0a;
+        }
+
+        #confirmButtons button.am-btn-right:hover
+        {
+            background-color: #20a121;
+        }
+
+        #confirmButtons button.am-btn-right
+        {
+            background-color: #09BB0A;
+            -webkit-transition: all .3s ease;
+            transition: all .3s ease;
+        }
+    </style>
+<script type="text/javascript">
+        var AmAjaxObj = new AmAjax({"send_url":"https:\/\/www.beautyfashionshop.de\/amcart\/ajax\/index\/","update_url":"https:\/\/www.beautyfashionshop.de\/amcart\/cart\/ajaxUpdate\/","src_image_progress":"https:\/\/www.beautyfashionshop.de\/skin\/frontend\/base\/default\/images\/amasty\/loading.gif","enable_minicart":"0","type_loading":"0","error":" \u2191 This is a required field.","align":"0","form_key":"iDi8eXRLLHCI70bC","is_product_view":1,"top_cart_selector":".header-minicart, .header-cart, #mini-cart-wrapper-regular","buttonClass":"button.btn-cart","linkcompare":0,"wishlist":0,"product_id":"20814"});
+    </script>
+<script type="text/javascript">
+	var optionsPrice = new Product.OptionsPrice([]);
+</script>
+<div id="messages_product_view"></div>
+<div class="product-view nested-container" itemscope itemtype="http://schema.org/Product">
+<form action="https://www.beautyfashionshop.de/checkout/cart/add/uenc/aHR0cHM6Ly93d3cuYmVhdXR5ZmFzaGlvbnNob3AuZGUvYW5hc3Rhc2lhLXNvZnQtZ2xhbS1leWUtc2hhZG93LXBhbGV0dGU_Y2hhbm5hYmxlPWU0OTQwNC5NakE0TVRR/product/20814/form_key/iDi8eXRLLHCI70bC/" method="post" id="product_addtocart_form">
+<input name="form_key" type="hidden" value="iDi8eXRLLHCI70bC" />
+<div class="no-display">
+<input type="hidden" name="product" value="20814" />
+<input type="hidden" name="related_product" id="related-products-field" value="" />
+</div>
+<div class="product-img-column grid12-5">
+<div class="img-box img-box-style1">
+<div class="prolabel-wrapper">
+<p class="product-image zoom-inside" style="max-width: 600px;">
+<a href="https://www.beautyfashionshop.de/media/catalog/product/cache/4/image/1200x1200/31058dc063160c6b15ba56dc70bcb03b/6/8/689304181747/anastasia-soft-glam-eye-shadow-palette.jpg" class="cloud-zoom product-image-gallery" id="zoom1" rel="position:'inside',showTitle:false,lensOpacity:0.5,smoothMove:3,zoomWidth:427,zoomHeight:275,adjustX:0,adjustY:0">
+<img id="image-main" class="gallery-image visible" src="https://www.beautyfashionshop.de/media/catalog/product/cache/4/image/600x600/31058dc063160c6b15ba56dc70bcb03b/6/8/689304181747/anastasia-soft-glam-eye-shadow-palette.jpg" alt="Anastasia Soft Glam Eye Shadow Palette" title="Anastasia Soft Glam Eye Shadow Palette" itemprop="image" />
+</a>
+<a id="zoom-btn" class="lightbox-group zoom-btn-small" href="https://www.beautyfashionshop.de/media/catalog/product/cache/4/image/1200x1200/31058dc063160c6b15ba56dc70bcb03b/6/8/689304181747/anastasia-soft-glam-eye-shadow-palette.jpg" title="Anastasia Soft Glam Eye Shadow Palette"><span class="ic ic-lg ic-zoomin"></span></a>
+</p></div>
+<div class="more-images slider-arrows3 itemslider-thumbnails count-3">
+<div id="itemslider-zoom" class="thumbnails slides">
+<div class="item">
+<a href="https://www.beautyfashionshop.de/media/catalog/product/cache/4/image/1200x1200/31058dc063160c6b15ba56dc70bcb03b/6/8/689304181747/anastasia-soft-glam-eye-shadow-palette.jpg" class="cloud-zoom-gallery lightbox-group" title="Anastasia Soft Glam Eye Shadow Palette" rel="useZoom:'zoom1', smallImage: 'https://www.beautyfashionshop.de/media/catalog/product/cache/4/image/600x600/31058dc063160c6b15ba56dc70bcb03b/6/8/689304181747/anastasia-soft-glam-eye-shadow-palette.jpg'">
+<img class="lazyOwl" data-src="https://www.beautyfashionshop.de/media/catalog/product/cache/4/thumbnail/65x65/9df78eab33525d08d6e5fb8d27136e95/6/8/689304181747/anastasia-soft-glam-eye-shadow-palette.jpg" alt="Anastasia Soft Glam Eye Shadow Palette" />
+</a>
+</div>
+<div class="item">
+<a href="https://www.beautyfashionshop.de/media/catalog/product/cache/4/image/1200x1200/31058dc063160c6b15ba56dc70bcb03b/6/8/689304181747_2/anastasia-soft-glam-eye-shadow-palette.jpg" class="cloud-zoom-gallery lightbox-group" title="Anastasia Soft Glam Eye Shadow Palette" rel="useZoom:'zoom1', smallImage: 'https://www.beautyfashionshop.de/media/catalog/product/cache/4/image/600x600/31058dc063160c6b15ba56dc70bcb03b/6/8/689304181747_2/anastasia-soft-glam-eye-shadow-palette.jpg'">
+<img class="lazyOwl" data-src="https://www.beautyfashionshop.de/media/catalog/product/cache/4/thumbnail/65x65/9df78eab33525d08d6e5fb8d27136e95/6/8/689304181747_2/anastasia-soft-glam-eye-shadow-palette.jpg" alt="Anastasia Soft Glam Eye Shadow Palette" />
+</a>
+</div>
+<div class="item">
+<a href="https://www.beautyfashionshop.de/media/catalog/product/cache/4/image/1200x1200/31058dc063160c6b15ba56dc70bcb03b/6/8/689304181747_3/anastasia-soft-glam-eye-shadow-palette.jpg" class="cloud-zoom-gallery lightbox-group" title="Anastasia Soft Glam Eye Shadow Palette" rel="useZoom:'zoom1', smallImage: 'https://www.beautyfashionshop.de/media/catalog/product/cache/4/image/600x600/31058dc063160c6b15ba56dc70bcb03b/6/8/689304181747_3/anastasia-soft-glam-eye-shadow-palette.jpg'">
+<img class="lazyOwl" data-src="https://www.beautyfashionshop.de/media/catalog/product/cache/4/thumbnail/65x65/9df78eab33525d08d6e5fb8d27136e95/6/8/689304181747_3/anastasia-soft-glam-eye-shadow-palette.jpg" alt="Anastasia Soft Glam Eye Shadow Palette" />
+</a>
+</div>
+</div>
+</div> 
+</div> 
+<script type="text/javascript">
+        jQuery(function($) {
+
+        	//Zoom button for main image
+        	$zoomButton = $("#zoom-btn");
+            
+            //Init lightbox
+            $(".lightbox-group").colorbox({
+			                rel:		'lightbox-group',
+			                opacity:	0.5,
+                speed:		300,
+                current:	'image {current} of {total}',
+                previous: '',
+                next: '',
+                close: '' //No comma here
+				, maxWidth:'95%', maxHeight:'95%'			});
+			
+			//Product thumbnails - remove first one from gallery, it's already included in gallery by "zoom" button
+							$(".cloud-zoom-gallery").first().removeClass("cboxElement");
+						
+			//Remove clicked thumbnail from gallery, it's already included in gallery by "zoom" button
+			$(".cloud-zoom-gallery").click(function() {
+				$zoomButton
+					.attr('href', $(this).attr('href'))
+					.attr('title', $(this).attr('title'));
+			
+									//First add gallery class to all thumbnails
+					$(".cloud-zoom-gallery").each(function() {
+						$(this).addClass("cboxElement");
+					});
+					$(this).removeClass("cboxElement");
+							});
+
+			//On image change
+			$(document).on('product-media-manager-image-updated', function(e, data) {
+
+				var img = data.img;
+
+				//Add new image's URL to the zoom button's href attribute
+				$zoomButton.attr('href', img.attr('src'));
+				$zoomButton.attr('title', '');
+
+									$(".cloud-zoom-gallery").each(function() {
+						$(this).addClass("cboxElement");
+					});
+				
+			}); //end: on event
+            
+        });
+    </script>
+<script type="text/javascript">
+//<![CDATA[
+
+    jQuery(function($) {
+
+        var $cz = $('.cloud-zoom');
+        var czInstance = $('.cloud-zoom').data('zoom');
+
+        //On image change
+        $(document).on('product-media-manager-image-updated', function(e, data) {
+
+            var img = data.img;
+
+            czInstance.destroy();
+
+            //Add new image's URL to the CloudZoom element's href attribute
+            $cz.attr('href', img.attr('src'));
+
+            //Remove mousetrap
+            var $mt = $('.mousetrap');
+            $mt.unbind();
+            $mt.remove();
+            $mt = null;
+
+            //Reinitialize CloudZoom
+            $cz.CloudZoom();
+
+        }); //end: on event
+
+        //On resize
+        var t;
+        $(window).resize(function() {
+            clearTimeout(t); 
+            t = setTimeout(function() {
+
+                czInstance.destroy();
+
+                //Remove mousetrap and other elements
+                var $mt = $('.mousetrap');
+                $mt.unbind();
+                $mt.remove();
+                $mt = null;
+                $('.cloud-zoom-lens').remove();
+                $('#cloud-zoom-big').remove();
+
+                //Reinitialize CloudZoom
+                $cz.CloudZoom();
+
+            }, 200);
+        });
+
+            var owl = $('#itemslider-zoom');
+        owl.owlCarousel({
+
+            mouseDrag: false,
+
+                    lazyLoad: true,
+        
+                    itemsCustom: [ [0, 1], [219, 2], [299, 3] ],
+            responsiveRefreshRate: 50,
+        
+                    slideSpeed: 200,
+        
+        
+                    autoPlay: 5000,
+        
+            stopOnHover: true,
+
+                    rewindNav: true,
+            rewindSpeed: 600,
+        
+            pagination: false,
+            navigation: true,
+            navigationText: false
+
+        }); //end: owl
+    
+    });
+//]]>
+</script>
+</div>
+<div class="product-primary-column product-shop grid12-4">
+<div class="product-name grid12-12 hide-below-480">
+<h1 itemprop="name">Anastasia Soft Glam Eye Shadow Palette</h1>
+</div>
+<div class="feature-wrapper grid12-12 no-gutter hide-below-480">
+<div class="short-description">
+<p><strong>Gesamtinhalt: </strong>1 PCS</p> </div>
+</div>
+<meta itemprop="productID" content="sku:ana1.98" /> <div class="feature-wrapper grid12-12 no-gutter">
+<div class="feature-wrapper grid12-12 price-container no-gutter">
+<div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+<div class="product-type-data">
+<div class="price-box">
+<span class="regular-price" id="product-price-20814">
+<span class="price">49,00 €</span> </span>
+<p class="mwst">inkl. gesetzlicher MwSt. zzgl. Versandkosten.</p>
+</div>
+</div>
+<meta itemprop="priceCurrency" content="EUR" /><meta itemprop="price" content="49" /> </div></div>
+<div class="add-to-box grid12-12 no-gutter">
+<div class="not-available">
+</div>
+</div>
+<a href="/kontakt" class="contact-us" title="Kontaktieren Sie Uns">Kontaktieren Sie uns für die Lieferzeit oder ein vergleichbares Produkt.</a>
+</div>
+<div class="feature-wrapper grid12-12 no-gutter">
+<div class="baseprice">(GP: <span class="price">49,00 €</span> / 1 St)</div>
+
+<p style="margin-top: 35px;"><span class="ic ic-lg ic-gift"></span> Gutschein bei jedem Kauf</p>
+
+</div>
+<div class="feature-wrapper grid12-12 no-gutter product-info-container hide-above-480">
+<div class="product-name grid12-12 hide-above-480">
+<h1 itemprop="name"><span>Anastasia Soft Glam Eye Shadow Palette</h1>
+</div>
+<div class="short-description">
+<p><strong>Gesamtinhalt: </strong>1 PCS</p> </div>
+</div>
+</div> 
+<div class="product-secondary-column grid12-3 custom-sidebar-right">
+<div class="inner">
+<div class='product-list-brand'> </div>
+<div class="container_product_secondary_2 std block_product_secondary_bottom">
+<p></p>
+
+<div class="addthis_sharing_toolbox">&nbsp;</div>
+<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56d02ae76b89014a" type="text/javascript"></script>
+
+<div class="feature feature-icon-hover indent first"><span class="ib ic ic-lg ic-mobile"></span>
+<h6>Beratung 0031- (0)53 20 30 290</h6>
+</div>
+<div class="feature feature-icon-hover indent"><span class="ib ic ic-lg ic-truck"></span>
+<h6><span style="color: #ff0000;">Versandkostenfrei ab 40,- &euro; (3,95 &euro;)</span></h6>
+</div>
+<div class="feature feature-icon-hover indent"><span class="ib ic ic-lg ic-success"></span>
+<h6>Auf Rechnung kaufen</h6>
+</div>
+<div class="feature feature-icon-hover indent"><span class="ib ic ic-lg ic-lastminute"></span>
+<h6>Lieferung innerhalb 1 - 3 Werktagen</h6>
+</div>
+<div class="feature feature-icon-hover indent last"><span class="ib ic ic-lg ic-gift"></span>
+<h6>Gutschein bei jedem Kauf</h6>
+</div></div>
+</div>
+</div> 
+</form>
+<script type="text/javascript">
+	//<![CDATA[
+		var productAddToCartForm = new VarienForm('product_addtocart_form');
+		productAddToCartForm.submit = function(button, url) {
+			if (this.validator.validate()) {
+				var form = this.form;
+				var oldUrl = form.action;
+
+				if (url) {
+				   form.action = url;
+				}
+				var e = null;
+				try {
+					this.form.submit();
+				} catch (e) {
+				}
+				this.form.action = oldUrl;
+				if (e) {
+					throw e;
+				}
+
+				if (button && button != 'undefined') {
+					button.disabled = true;
+				}
+			}
+		}.bind(productAddToCartForm);
+
+		productAddToCartForm.submitLight = function(button, url){
+			if(this.validator) {
+				var nv = Validation.methods;
+				delete Validation.methods['required-entry'];
+				delete Validation.methods['validate-one-required'];
+				delete Validation.methods['validate-one-required-by-name'];
+				if (this.validator.validate()) {
+					if (url) {
+						this.form.action = url;
+					}
+					this.form.submit();
+				}
+				Object.extend(Validation.methods, nv);
+			}
+		}.bind(productAddToCartForm);
+	//]]>
+	</script>
+<div class="box-additional grid12-9">
+</div> 
+<div class="box-additional box-sidebar custom-sidebar-right grid12-3">
+<div class="inner"></div>
+</div>
+<div class="box-additional grid12-9"><div class="box-collateral collateral-container box-tabs">
+<div id="product-tabs" class="gen-tabs gen-tabs--style1">
+<ul class="tabs clearer">
+<li id="tab-description"><a href="#" class="current">Produktbeschreibung</a></li>
+<li id="tab-product_cms_tab_trusted"><a href="#">Bewertungen</a></li>
+</ul>
+<div class="tabs-panels"><div class="acctab" id="acctab-description">Produktbeschreibung</div><div class="panel"> <h2>Informationen</h2>
+<div class="std">
+<div class="additional-attr">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vRGh32rCUm4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p> </div>
+</div>
+</div><div class="acctab" id="acctab-product_cms_tab_trusted">Bewertungen</div><div class="panel"> <div class="std">&nbsp;</div>
+<div id="ts_product_sticker"></div>
+</div></div>
+</div>
+<script type="text/javascript">
+        //<![CDATA[
+        jQuery(function($) {
+
+            //Link to the reviews tab
+            var tabOperator = {
+
+                root : ''
+                , $rootContainer : null
+                , $tabsContainer : null
+                , $panelsContainer : null
+
+                //1 - tabs/accordion, 2 - accordion, 3 - tabs
+                , mode : 3                , threshold : 1024                , initialAccIndex : 0
+                , tabEffect : 'default'
+                , accEffect : 'default'
+
+                , init : function(root)
+                {
+                    //If no param, set default selector
+                    tabOperator.root = root || '.gen-tabs';
+                    tabOperator.$rootContainer      = $(tabOperator.root);
+                    tabOperator.$tabsContainer      = tabOperator.$rootContainer.children('.tabs');
+                    tabOperator.$panelsContainer    = tabOperator.$rootContainer.children('.tabs-panels');
+
+                    //Activate tabs based on selected mode
+                                            tabOperator.initialAccIndex = null;
+                    
+                    if (tabOperator.mode === 1)
+                    {
+                        //Initial value of the flag which indicates whether viewport was above the threshold
+                        var previousAboveThreshold = $(window).width() >= tabOperator.threshold;
+
+                        //Activate tabs or accordion
+                        if (previousAboveThreshold)
+                        {
+                            //If above threshold - activate tabs
+                            tabOperator.initTabs();
+                        }
+                        else
+                        {
+                            //If below threshold - activate accordion
+                            tabOperator.initAccordion(tabOperator.initialAccIndex);
+                        }
+
+                        //On tab click
+                        tabOperator.hookToAccordionOnClick();
+
+                        //On window resize
+                        $(window).on('themeResize', function (e, resizeEvent) {
+
+                            if ($(window).width() < tabOperator.threshold)
+                            {
+                                if (previousAboveThreshold)
+                                {
+                                    //Now below threshold, previously above, so switch to accordion
+                                    var api = tabOperator.$tabsContainer.data("tabs");
+                                    var index = api.getIndex();
+                                    api.destroy();
+
+                                    tabOperator.initAccordion(index);
+                                }
+                                previousAboveThreshold = false;
+                            }
+                            else
+                            {
+                                if (!previousAboveThreshold)
+                                {
+                                    //Now above threshold, previously below, so switch to tabs
+                                    var api = tabOperator.$panelsContainer.data("tabs");
+                                    var index = api.getIndex();
+                                    api.destroy();
+                                    tabOperator.$rootContainer.removeClass("accor");
+
+                                    tabOperator.initTabs(index);
+                                }
+                                previousAboveThreshold = true;
+                            }
+
+                        });
+                    }
+                    else if (tabOperator.mode === 2)
+                    {
+                        tabOperator.initAccordion(tabOperator.initialAccIndex);
+
+                        //On tab click
+                        tabOperator.hookToAccordionOnClick();
+                    }
+                    else
+                    {
+                        tabOperator.initTabs();
+                    }
+
+                } //end: init
+
+                , initTabs : function(index)
+                {
+                    //If no param, set it to 0
+                    if (typeof index === "undefined")
+                    { 
+                        index = 0;
+                    }
+                    tabOperator.$tabsContainer.tabs(".tabs-panels .panel", {effect: tabOperator.tabEffect, initialIndex: index});
+                }
+
+                , initAccordion : function(index)
+                {
+                    //If no param, set it to 0
+                    if (typeof index === "undefined")
+                    { 
+                        index = 0;
+                    }
+                    tabOperator.$rootContainer.addClass("accor");
+                    tabOperator.$panelsContainer.tabs(".tabs-panels .panel", {tabs: '.acctab', effect: tabOperator.accEffect, initialIndex: index});
+                }
+
+                , hookToAccordionOnClick : function()
+                {
+                    //Attach a handler to an event after a tab is clicked
+                    tabOperator.$panelsContainer.bind("onClick", function(event, index) {
+
+                        //Note: "this" is a reference to the DOM element of tabs
+                        //var theTabs = this;
+                        var target = event.target || event.srcElement || event.originalTarget;
+
+                        //If viewport is lower than the item, scroll to that item
+                        var itemOffsetTop = $(target).offset().top;
+                        var viewportOffsetTop = jQuery(window).scrollTop();
+                        if (itemOffsetTop < viewportOffsetTop)
+                        {
+                            $("html, body").delay(150).animate({scrollTop: (itemOffsetTop-50)}, 600, 'easeOutCubic');
+                        }
+
+                    }); //end: bind onClick
+                }
+
+                , openTab : function()
+                {
+                    if (tabOperator.$rootContainer.hasClass("accor"))
+                    {
+                        var $panels = tabOperator.$panelsContainer;
+                        var indexOfTab = $panels.children(".acctab").index($("#acctab-tabreviews"));
+                        $panels.data("tabs").click(indexOfTab);
+                    }
+                    else
+                    {
+                        var $tabs = tabOperator.$tabsContainer;
+                        var indexOfTab = $tabs.children("#tab-tabreviews").index();
+                        $tabs.data("tabs").click(indexOfTab);
+                    }
+                }
+
+                , slideTo : function(target, offset)
+                {
+                    //Slide to tab (minus height of sticky menu)
+                    var itemOffsetTop = $(target).offset().top - offset;
+                    $("html, body").animate({scrollTop: itemOffsetTop}, 600, 'easeOutCubic');
+                }
+
+            };
+
+            //Initialize tabs
+            tabOperator.init('#product-tabs');
+
+                
+            $("#goto-reviews").click(function() {
+                
+                tabOperator.openTab();
+                tabOperator.slideTo('#product-tabs', 50);
+
+            }); //end: on click
+
+            $("#goto-reviews-form").click(function() {
+
+                tabOperator.openTab();
+                tabOperator.slideTo('#review-form', 90);
+
+            }); //end: on click
+
+        
+        });
+        //]]>
+    </script>
+</div></div>
+</div> 
+
+
+<style>@media only screen and (max-width: 479px) {.add-to-cart .button {width: 65% !important;}}</style>
+<script type="text/javascript">
+    var lifetime = 3600;
+    var expireAt = Mage.Cookies.expires;
+    if (lifetime > 0) {
+        expireAt = new Date();
+        expireAt.setTime(expireAt.getTime() + lifetime * 1000);
+    }
+    Mage.Cookies.set('external_no_cache', 1, expireAt);
+</script>
+</div>
+<div class="postscript"></div>
+</div>
+</div>
+</div>
+<div class="footer-container">
+<div class="footer-container2">
+<div class="footer-container3">
+<div class="footer-primary-container section-container">
+<div class="footer-primary footer container">
+<div class="inner-container">
+<div class="footer-primary-bottom grid12-12">
+<div class="footer-primary-bottom-spacing clearer">
+<div class="item item-left clearer block_footer_primary_bottom_left">
+<div class="social-links ib-wrapper--square">
+<a href="https://nl-nl.facebook.com/bemabeautyDE" target="_blank" title="BEMA Beauty Products Facebook">
+<span class="ic ic-lg ic-facebook" style="padding-right: 20px"></span>
+</a>
+<a href="https://www.youtube.com/channel/UCn_w74Z9D36FjvK8SkqCl5A" target="_blank" title="BEMA Beauty Products Youtube">
+<span class="ic ic-lg ic-youtube" style="padding-right: 20px" "></span>
+</a>
+<a href="https://www.instagram.com/bemabeautyproducts/" target="_blank" title="BEMA Beauty Products Instagram">
+<span class="ic ic-lg ic-instagram" style="padding-right: 20px"></span>
+</a>
+</div> </div>
+</div>
+</div> 
+<div class="clearer">
+<div class="grid12-12"> <div class="std"><div class="grid12-2 no-gutter">
+<div class="collapsible mobile-collapsible">
+<h6 class="block-title heading">Kontakt</h6>
+<div class="block-content">
+<div class="feature first last">Be Beauty Online B.V.<br /> Euregioweg 245 <br /> 7532 SM Enschede<br /> 0031 (0)53 &ndash; 20 30 290<br /> Niederlande</div>
+</div>
+</div>
+</div>
+<div class="grid12-5 no-gutter">
+<div class="collapsible mobile-collapsible">
+<h6 class="block-title heading">Immer</h6>
+<div class="block-content">
+<ul class="ic-ul">
+<li><span style="color:#baa47e" class="ic ic-success ic-li"></span>Beratung durch eine Kosmetikerin & Visagist,</li>
+<li><span style="color:#baa47e" class="ic ic-success ic-li"></span>Nicht gut, Geld zurück (hervorragende Abwicklung),</li>
+<li><span style="color:#baa47e" class="ic ic-success ic-li"></span>Lieferung innerhalb 1 - 3 Werktagen,</li>
+<li><span style="color:#baa47e" class="ic ic-success ic-li"></span>Klar und übersichtlich (Alle Preise inkl. MwSt.),</li>
+<li><span style="color:#baa47e" class="ic ic-success ic-li"></span>Immer wettbewerbsfähige Preise & schöne Geschenksets im Angebot,</li>
+<li><span style="color:#baa47e" class="ic ic-success ic-li"></span>Kostenlos Ihre Bestellung 14 Tage später bezahlen.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="grid12-2 no-gutter">
+<div class="collapsible mobile-collapsible">
+<h6 class="block-title heading">Online-Shop</h6>
+<div class="block-content">
+<ul class="bullet">
+<li><a href="/kontakt">Kontakt & Service</a></li>
+<li><a href="/fragen">Fragen</a></li>
+<li><a href="/zahlungsmoglichkeiten">Zahlungsmöglichkeiten</a></li>
+<li><a href="/impressum">Impressum</a></li>
+<li><a href="/datenschutzerklaerung">Datenschutzerkl&auml;rung</a></li>
+<li><a href="/cookies">Cookies</a></li>
+<li><a href="/widerruf">Widerruf</a></li>
+<li><a href="/agb">AGB</a></li>
+<li><a href="/kassen-aktion"><span class="ic ic-lg ic-lg ic-gift" style="padding-right:5px;"></span>Kassen Aktion</a></li>
+<li><a href="/blog">Blog</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="grid12-3">
+<div class="collapsible mobile-collapsible">
+<div class="block-content">
+<p><img src="https://www.beautyfashionshop.de/media/wysiwyg/TrustedShops/trustedshops_logo.png" alt="" /></p>
+<p><img src="https://www.beautyfashionshop.de/media/wysiwyg/TrustedShops/trustedshops_beautyfashionshop.png" alt="" /></p>
+<div itemtype="http://data-vocabulary.org/Review-aggregate" itemscope="">
+<meta itemprop="itemreviewed" content="beautyfashionshop.de" />
+<meta itemprop="count" content="2758" />
+<div itemtype="http://data-vocabulary.org/Rating" itemscope="" itemprop="rating">
+<p><span style="font-size: large;">Bewertung: <span itemprop="average">4.67</span> / <span itemprop="best">5.00</span></span></p>
+<h6><strong>Sehr gut</strong> | 2758 Bewertungen</h6>
+<h6><a href="https://www.trustedshops.de/bewertung/info_X5C02E13868CDC0CD29832180E30DEC8E.html" target="_blank" class="go">Alle Bewertungen anzeigen</a></h6>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="grid12-12 no-gutter">
+<div class="collapsible mobile-collapsible">
+<h6 class="block-title heading">Top-Marken</h6>
+<div class="block-content">
+<a href="https://www.beautyfashionshop.de/marken/academie" target="_blank" class="go">Academie</a>
+<a href="https://www.beautyfashionshop.de/marken/anastasia-beverly-hills" target="_blank" class="go">Anastasia</a>
+<a href="https://www.beautyfashionshop.de/marken/reviderm" target="_blank" class="go">Reviderm</a>
+<a href="https://www.beautyfashionshop.de/marken/thalgo" target="_blank" class="go">Thalgo</a>
+<a href="https://www.beautyfashionshop.de/marken/payot" target="_blank" class="go">Payot</a>
+<a href="https://www.beautyfashionshop.de/marken/pupa" target="_blank" class="go">Pupa</a>
+<a href="https://www.beautyfashionshop.de/marken/klapp" target="_blank" class="go">KLAPP</a>
+<a href="https://www.beautyfashionshop.de/marken/dermalogica" target="_blank" class="go">Dermalogica</a>
+<a href="https://www.beautyfashionshop.de/marken/long4lashes" target="_blank" class="go">Long4Lashes</a>
+<a href="https://www.beautyfashionshop.de/marken/jan-marini" target="_blank" class="go">Jan Marini</a>
+<a href="https://www.beautyfashionshop.de/marken/medik8" target="_blank" class="go">Medik8</a>
+<a href="https://www.beautyfashionshop.de/marken/dr-spiller" target="_blank" class="go">Dr. Spiller</a>
+<a href="https://www.beautyfashionshop.de/marken/dr-massing" target="_blank" class="go">Dr. Massing</a>
+<a href="https://www.beautyfashionshop.de/marken/jean-d-arcel" target="_blank" class="go">Jean D'Arcel</a>
+<a href="https://www.beautyfashionshop.de/marken/rimmel" target="_blank" class="go">Rimmel</a>
+<a href="https://www.beautyfashionshop.de/marken/t-leclerc" target="_blank" class="go">T.LeClerc</a>
+<a href="https://www.beautyfashionshop.de/marken/esthechoc" target="_blank" class="go">Esthechoc</a>
+<a href="https://www.beautyfashionshop.de/marken/nanolash" target="_blank" class="go">Nanolash</a>
+<a href="https://www.beautyfashionshop.de/marken/nanolash" target="_blank" class="go">Whitetobrown</a>
+<a href="https://www.beautyfashionshop.de/marken/mary-cohr" target="_blank" class="go">Mary Cohr</a>
+<a href="https://www.beautyfashionshop.de/marken/malu-wilz" target="_blank" class="go">Malu Wilz</a>
+<a href="https://www.beautyfashionshop.de/marken/matis" target="_blank" class="go">Matis</a>
+<a href="https://www.beautyfashionshop.de/marken/annemarie-borlind" target="_blank" class="go">Annemarie Borlind</a>
+<a href="https://www.beautyfashionshop.de/marken/deborah-milano" target="_blank" class="go">Deborah Milano</a>
+<a href="https://www.beautyfashionshop.de/marken/controlled-chaos" target="_blank" class="go">Controlled Chaos</a>
+<a href="https://www.beautyfashionshop.de/marken/vitaminoplex" target="_blank" class="go">Vitaminoplex</a>
+<a href="https://www.beautyfashionshop.de/marken/buddy-tantino" target="_blank" class="go">Buddy Tantino</a>
+<a href="https://www.beautyfashionshop.de/marken/blumaan" target="_blank" class="go">BluMaan</a>
+<a href="https://www.beautyfashionshop.de/marken/design-me" target="_blank" class="go">Design.Me</a>
+<a href="https://www.beautyfashionshop.de/marken/top-shelf-4-men" target="_blank" class="go">Top Shelf 4 Men</a>
+<a href="https://www.beautyfashionshop.de/marken/color-wow" target="_blank" class="go">Color Wow</a>
+<a href="https://www.beautyfashionshop.de/marken/diva-professional-styling" target="_blank" class="go">Diva Professional Styling</a>
+<a href="https://www.beautyfashionshop.de/marken/waterclouds" target="_blank" class="go">Waterclouds</a>
+<a href="https://www.beautyfashionshop.de/marken/clubman-pinaud" target="_blank" class="go">Clubman Pinaud</a>
+<a href="https://www.beautyfashionshop.de/marken/bourjois" target="_blank" class="go">Bourjois</a>
+<a href="https://www.beautyfashionshop.de/marken/christian-faye" target="_blank" class="go">Christian Faye</a>
+<a href="https://www.beautyfashionshop.de/marken/dermaroller" target="_blank" class="go">Dermaroller</a>
+<a href="https://www.beautyfashionshop.de/marken/ericson-laboratoire" target="_blank" class="go">Ericson Laboratoire</a>
+<a href="https://www.beautyfashionshop.de/marken/hildegard-braukmann" target="_blank" class="go">Hildegard Braukmann</a>
+<a href="https://www.beautyfashionshop.de/marken/lash-extend" target="_blank" class="go">Lash Extend</a>
+<a href="https://www.beautyfashionshop.de/marken/make-up-studio" target="_blank" class="go">Make-up Studio</a>
+<a href="https://www.beautyfashionshop.de/marken/marc-inbane" target="_blank" class="go">Marc Inbane</a>
+<a href="https://www.beautyfashionshop.de/marken/real-techniques" target="_blank" class="go">Real Techniques</a>
+<a href="https://www.beautyfashionshop.de/marken/retinol" target="_blank" class="go">Retinol</a>
+<a href="https://www.beautyfashionshop.de/marken/skeyndor" target="_blank" class="go">Skeyndor</a>
+<a href="https://www.beautyfashionshop.de/marken/silkn" target="_blank" class="go">Silk'n</a>
+<a href="https://www.beautyfashionshop.de/marken/murad" target="_blank" class="go">Murad</a>
+<a href="https://www.beautyfashionshop.de/marken/indeed-laboratories" target="_blank" class="go">Indeed Laboratories</a>
+<a href="https://www.beautyfashionshop.de/marken/la-colline" target="_blank" class="go">La Colline</a>
+<a href="https://www.beautyfashionshop.de/marken/dermolab" target="_blank" class="go">Dermolab</a>
+<a href="https://www.beautyfashionshop.de/marken/jean-d-aveze" target="_blank" class="go">Jean D'Aveze</a>
+<a href="https://www.beautyfashionshop.de/marken/embryolisse" target="_blank" class="go">Embryolisse</a>
+<a href="https://www.beautyfashionshop.de/marken/pur" target="_blank" class="go">Pur</a>
+<a href="https://www.beautyfashionshop.de/marken/hydropeptide" target="_blank" class="go">Hydropeptide</a>
+<a href="https://www.beautyfashionshop.de/marken/najel-aleppo-olivenolseife" target="_blank" class="go">Najel Aleppo</a>
+<a href="https://www.beautyfashionshop.de/marken/lily-lolo" target="_blank" class="go">Lily Lolo</a>
+<a href="https://www.beautyfashionshop.de/marken/teatox" target="_blank" class="go">Teatox</a>
+<a href="https://www.beautyfashionshop.de/marken/egyptian-magic" target="_blank" class="go">Egyptian Magic</a>
+<a href="https://www.beautyfashionshop.de/marken/kocostar" target="_blank" class="go">Kocostar</a>
+<a href="https://www.beautyfashionshop.de/marken/beauty-bear" target="_blank" class="go">Beauty Bear</a>
+<a href="https://www.beautyfashionshop.de/marken/color-wow" target="_blank" class="go">Color Wow</a>
+<a href="https://www.beautyfashionshop.de/marken/alphanova" target="_blank" class="go">Alphanova</a>
+<a href="https://www.beautyfashionshop.de/marken/balm-balm" target="_blank" class="go">Balm Balm</a>
+<a href="https://www.beautyfashionshop.de/marken/glossworks" target="_blank" class="go">Glossworks</a>
+<a href="https://www.beautyfashionshop.de/marken/indemne" target="_blank" class="go">Indemne</a>
+<a href="https://www.beautyfashionshop.de/marken/la-fare-1789" target="_blank" class="go">La Fare 1789</a>
+<a href="https://www.beautyfashionshop.de/marken/montbrun-eau-thermale" target="_blank" class="go">Montbrun Eau Thermale</a>
+<a href="https://www.beautyfashionshop.de/marken/oliv-bio" target="_blank" class="go">Oliv Bio</a>
+<a href="https://www.beautyfashionshop.de/marken/ooh-oils-of-heaven" target="_blank" class="go">Ooh Oils Of Heaven</a>
+<a href="https://www.beautyfashionshop.de/marken/salt-of-the-earth-1" target="_blank" class="go">Salt Of The Earth</a>
+<a href="https://www.beautyfashionshop.de/marken/santaverde" target="_blank" class="go">Santaverde</a>
+<a href="https://www.beautyfashionshop.de/marken/surya-brasil" target="_blank" class="go">Surya Brasil</a>
+<a href="https://www.beautyfashionshop.de/marken/uoga-uoga" target="_blank" class="go">Uoga Uoga</a>
+<a href="https://www.beautyfashionshop.de/marken/yverum" target="_blank" class="go">Yverum</a>
+<a href="https://www.beautyfashionshop.de/marken/emani" target="_blank" class="go">Emani</a>
+<a href="https://www.beautyfashionshop.de/marken/tonymoly" target="_blank" class="go">Tonymoly</a>
+<a href="https://www.beautyfashionshop.de/marken/foamie" target="_blank" class="go">Foamie</a>
+<a href="https://www.beautyfashionshop.de/marken/emotion" target="_blank" class="go">Emotion</a>
+<a href="https://www.beautyfashionshop.de/marken/teaology" target="_blank" class="go">Teaology</a>
+<a href="https://www.beautyfashionshop.de/marken/ecooking" target="_blank" class="go">Ecooking</a>
+<a href="https://www.beautyfashionshop.de/marken/mineralissima" target="_blank" class="go">Mineralissima</a>
+<a href="https://www.beautyfashionshop.de/marken/holika-holika" target="_blank" class="go">Holika Holika</a>
+<a href="https://www.beautyfashionshop.de/marken/vita-coco" target="_blank" class="go">Vita Coco</a>
+<a href="https://www.beautyfashionshop.de/marken/kryolan" target="_blank" class="go">Kryolan</a>
+<a href="https://www.beautyfashionshop.de/marken/bumble-and-bumble" target="_blank" class="go">Bumble and Bumble</a>
+<a href="https://www.beautyfashionshop.de/marken/tangle-teezer" target="_blank" class="go">Tangle Teezer</a>
+<a href="https://www.beautyfashionshop.de/marken/fillmed" target="_blank" class="go">Fillmed</a>
+<a href="https://www.beautyfashionshop.de/marken/doop" target="_blank" class="go">Doop</a>
+<a href="https://www.beautyfashionshop.de/marken/scrub-and-rub" target="_blank" class="go">Scrub & Rub</a>
+<a href="https://www.beautyfashionshop.de/marken/ofra-cosmetics" target="_blank" class="go">Ofra</a>
+<a href="https://www.beautyfashionshop.de/marken/dado-sens" target="_blank" class="go">Dado Sens</a>
+<a href="https://www.beautyfashionshop.de/marken/lashcode" target="_blank" class="go">Lashcode</a>
+<a href="https://www.beautyfashionshop.de/marken/i-coloniali" target="_blank" class="go">I Coloniali</a>
+<a href="https://www.beautyfashionshop.de/marken/bemineral" target="_blank" class="go">BeMineral</a>
+<a href="https://www.beautyfashionshop.de/marken/zoya-goes-pretty" target="_blank" class="go">Zoya Goes Pretty</a>
+<a href="https://www.beautyfashionshop.de/marken/depileve" target="_blank" class="go">Depilève</a>
+<a href="https://www.beautyfashionshop.de/marken/iso-beauty" target="_blank" class="go">ISO Beauty</a>
+<a href="https://www.beautyfashionshop.de/marken/biosilk" target="_blank" class="go">Biosilk</a>
+<a href="https://www.beautyfashionshop.de/marken/label-m" target="_blank" class="go">Label.M</a>
+<a href="https://www.beautyfashionshop.de/marken/minetan" target="_blank" class="go">Minetan</a>
+<a href="https://www.beautyfashionshop.de/marken/mr-bear-family" target="_blank" class="go">Mr. Bear Family</a>
+<a href="https://www.beautyfashionshop.de/marken/b-tan" target="_blank" class="go">B.Tan</a>
+<a href="https://www.beautyfashionshop.de/marken/the-knot-dr" target="_blank" class="go">The Knot Dr</a>
+<a href="https://www.beautyfashionshop.de/marken/living-proof" target="_blank" class="go">Living Proof</a>
+<a href="https://www.beautyfashionshop.de/marken/hairfinity" target="_blank" class="go">Hairfinity</a>
+<a href="https://www.beautyfashionshop.de/marken/farouk-royal-treatment" target="_blank" class="go">Farouk Royal Treatment</a>
+<a href="https://www.beautyfashionshop.de/marken/hh-simonsen" target="_blank" class="go">HH Simonsen</a>
+<a href="https://www.beautyfashionshop.de/marken/chi" target="_blank" class="go">CHI</a>
+<a href="https://www.beautyfashionshop.de/marken/mentho-10" target="_blank" class="go">Mentho 10</a>
+<a href="https://www.beautyfashionshop.de/marken/la-riche-directions" target="_blank" class="go">La Riche Directions</a>
+<a href="https://www.beautyfashionshop.de/marken/color-awf" target="_blank" class="go">Color AWF</a>
+<a href="https://www.beautyfashionshop.de/marken/aphro-celina" target="_blank" class="go">Aphro Celina</a>
+<a href="https://www.beautyfashionshop.de/marken/miralash" target="_blank" class="go">Miralash</a>
+<a href="https://www.beautyfashionshop.de/marken/grande-cosmetics" target="_blank" class="go">Grande Cosmetics</a>
+<a href="https://www.beautyfashionshop.de/marken/carita" target="_blank" class="go">Carita Paris</a>
+<a href="https://www.beautyfashionshop.de/marken/dermacol" target="_blank" class="go">Dermacol</a>
+<a href="https://www.beautyfashionshop.de/marken/benecos" target="_blank" class="go">Benecos</a>
+<a href="https://www.beautyfashionshop.de/marken/boho" target="_blank" class="go">Boho</a>
+<a href="https://www.beautyfashionshop.de/marken/phitex" target="_blank" class="go">Phitex</a>
+<a href="https://www.beautyfashionshop.de/marken/orphica" target="_blank" class="go">Orphica</a>
+<a href="https://www.beautyfashionshop.de/marken/revitaltrax" target="_blank" class="go">Revitaltrax</a>
+<a href="https://www.beautyfashionshop.de/marken/human-kind" target="_blank" class="go">Human + Kind</a>
+<a href="https://www.beautyfashionshop.de/marken/nordics" target="_blank" class="go">Nordics</a>
+<a href="https://www.beautyfashionshop.de/marken/walden-natural-perfume" target="_blank" class="go">Walden Natural Perfume</a>
+<a href="https://www.beautyfashionshop.de/marken/babyliss" target="_blank" class="go">Babyliss</a>
+<a href="https://www.beautyfashionshop.de/marken/denman" target="_blank" class="go">Denman</a>
+<a href="https://www.beautyfashionshop.de/marken/hercules" target="_blank" class="go">Hercules</a>
+<a href="https://www.beautyfashionshop.de/marken/barburys" target="_blank" class="go">Barburys</a>
+<a href="https://www.beautyfashionshop.de/marken/grazette" target="_blank" class="go">Grazette</a>
+<a href="https://www.beautyfashionshop.de/marken/le-papier" target="_blank" class="go">Le Papier</a>
+<a href="https://www.beautyfashionshop.de/marken/urban-alchemy" target="_blank" class="go">Urban Alchemy</a>
+<a href="https://www.beautyfashionshop.de/marken/webecos" target="_blank" class="go">Webecos</a>
+<a href="https://www.beautyfashionshop.de/marken/dr-tadlea" target="_blank" class="go">Dr. Tadlea</a>
+<a href="https://www.beautyfashionshop.de/marken/collosol" target="_blank" class="go">Collosol</a>
+<a href="https://www.beautyfashionshop.de/marken/banila" target="_blank" class="go">Banila</a>
+</div>
+</div>
+</div></div></div> </div> 
+</div> 
+</div> 
+</div>
+<div class="footer-bottom-container section-container">
+<div class="footer-bottom footer container">
+<div class="inner-container">
+<div class="clearer">
+<div class="item item-left">
+<div class="footer-copyright">*UVP = Unverbindliche Preisempfehlung, alle Preise inkl. Gesetzlicher MwSt., <a href="/fragen">versandkostenfrei (ab einem Warenwert von 40 EUR)</a>. © <script>document.write(new Date().getFullYear())</script> - BEMA Beauty Products.</div>
+</div>
+<div class="item item-right block_footer_payment"><p><a href="/zahlungsmoglichkeiten"><img title="Zahlungsmöglichkeiten" alt="Zahlungsmöglichkeiten" src="https://www.beautyfashionshop.de/media/wysiwyg/Home/payment_de.jpg" /></a></p></div>
+</div> 
+</div> 
+</div> 
+</div>
+<a id="scroll-to-top" class="ic ic-up" href="#top"></a>
+</div> 
+</div> 
+</div> 
+<script type="text/javascript">
+	//<![CDATA[
+
+			var gridItemsEqualHeightApplied = false;
+	function setGridItemsEqualHeight($)
+	{
+		var $list = $('.category-products-grid');
+		var $listItems = $list.children();
+
+		var centered = $list.hasClass('centered');
+		var gridItemMaxHeight = 0;
+		$listItems.each(function() {
+			
+			$(this).css("height", "auto"); 			var $object = $(this).find('.actions');
+
+						if (centered)
+			{
+				var objectWidth = $object.width();
+				var availableWidth = $(this).width();
+				var space = availableWidth - objectWidth;
+				var leftOffset = space / 2;
+				$object.css("padding-left", leftOffset + "px"); 			}
+
+						var bottomOffset = parseInt($(this).css("padding-top"));
+			if (centered) bottomOffset += 10;
+			$object.css("bottom", bottomOffset + "px");
+
+						if ($object.is(":visible"))
+			{
+								var objectHeight = $object.height();
+				$(this).css("padding-bottom", (objectHeight + bottomOffset) + "px");
+			}
+
+						
+			gridItemMaxHeight = Math.max(gridItemMaxHeight, $(this).height());
+		});
+
+		//Apply max height
+		$listItems.css("height", gridItemMaxHeight + "px");
+		gridItemsEqualHeightApplied = true;
+
+	}
+	
+
+
+	jQuery(function($) {
+
+				var ddOpenTimeout;
+		var dMenuPosTimeout;
+		var DD_DELAY_IN = 200;
+		var DD_DELAY_OUT = 0;
+		var DD_ANIMATION_IN = 0;
+		var DD_ANIMATION_OUT = 0;
+
+		$('.clickable-dropdown > .dropdown-heading').click(function() {
+			$(this).parent().addClass('open');
+			$(this).parent().trigger('mouseenter');
+		});
+
+		//$('.dropdown-heading').on('click', function(e) {
+		$(document).on('click', '.dropdown-heading', function(e) {
+			e.preventDefault();
+		});
+
+		$(document).on('mouseenter', '.dropdown', function() {
+			
+			var ddToggle = $(this).children('.dropdown-heading');
+			var ddMenu = $(this).children('.dropdown-content');
+			var ddWrapper = ddMenu.parent(); 			
+						ddMenu.css("left", "");
+			ddMenu.css("right", "");
+			
+						if ($(this).hasClass('clickable-dropdown'))
+			{
+								if ($(this).hasClass('open'))
+				{
+					$(this).children('.dropdown-content').stop(true, true).delay(DD_DELAY_IN).fadeIn(DD_ANIMATION_IN, "easeOutCubic");
+				}
+			}
+			else
+			{
+								clearTimeout(ddOpenTimeout);
+				ddOpenTimeout = setTimeout(function() {
+					
+					ddWrapper.addClass('open');
+					
+				}, DD_DELAY_IN);
+				
+				//$(this).addClass('open');
+				$(this).children('.dropdown-content').stop(true, true).delay(DD_DELAY_IN).fadeIn(DD_ANIMATION_IN, "easeOutCubic");
+			}
+			
+						clearTimeout(dMenuPosTimeout);
+			dMenuPosTimeout = setTimeout(function() {
+
+				if (ddMenu.offset().left < 0)
+				{
+					var space = ddWrapper.offset().left; 					ddMenu.css("left", (-1)*space);
+					ddMenu.css("right", "auto");
+				}
+			
+			}, DD_DELAY_IN);
+
+		}).on('mouseleave', '.dropdown', function() {
+			
+			var ddMenu = $(this).children('.dropdown-content');
+			clearTimeout(ddOpenTimeout); 			ddMenu.stop(true, true).delay(DD_DELAY_OUT).fadeOut(DD_ANIMATION_OUT, "easeInCubic");
+			if (ddMenu.is(":hidden"))
+			{
+				ddMenu.hide();
+			}
+			$(this).removeClass('open');
+		});
+		
+		
+		
+							$(".main").addClass("show-bg");
+				
+		
+		
+				var windowScroll_t;
+		$(window).scroll(function(){
+			
+			clearTimeout(windowScroll_t);
+			windowScroll_t = setTimeout(function() {
+										
+				if ($(this).scrollTop() > 100)
+				{
+					$('#scroll-to-top').fadeIn();
+				}
+				else
+				{
+					$('#scroll-to-top').fadeOut();
+				}
+			
+			}, 500);
+			
+		});
+		
+		$('#scroll-to-top').click(function(){
+			$("html, body").animate({scrollTop: 0}, 600, "easeOutCubic");
+			return false;
+		});
+		
+		
+		
+				
+			var startHeight;
+			var bpad;
+			$('.category-products-grid').on('mouseenter', '.item', function() {
+
+														if ($(window).width() >= 320)
+					{
+				
+											if (gridItemsEqualHeightApplied === false)
+						{
+							return false;
+						}
+					
+					startHeight = $(this).height();
+					$(this).css("height", "auto"); //Release height
+					$(this).find(".display-onhover").fadeIn(400, "easeOutCubic"); //Show elements visible on hover
+					var h2 = $(this).height();
+					
+										////////////////////////////////////////////////////////////////
+					var addtocartHeight = 0;
+					var addtolinksHeight = 0;
+					
+											//addtocartHeight = $(this).find('.btn-cart').height(); //obsolete
+						var buttonOrStock = $(this).find('.btn-cart');
+						if (buttonOrStock.length == 0) buttonOrStock = $(this).find('.availability');
+						addtocartHeight = buttonOrStock.height();
+						
+										
+										
+											var h3 = h2 + addtocartHeight + addtolinksHeight;
+						var diff = 0;
+						if (h3 < startHeight)
+						{
+							$(this).height(startHeight);
+						}
+						else
+						{
+							$(this).height(h3); 							diff = h3 - startHeight;
+						}
+										////////////////////////////////////////////////////////////////
+
+					$(this).css("margin-bottom", "-" + diff + "px"); 
+									} 								
+			}).on('mouseleave', '.item', function() {
+
+													if ($(window).width() >= 320)
+					{
+				
+					//Clean up
+					$(this).find(".display-onhover").stop(true).hide();
+					$(this).css("margin-bottom", "");
+
+																$(this).height(startHeight);
+					
+									} 								
+			});
+		
+		
+
+
+				$('.products-grid, .products-list').on('mouseenter', '.product-image-wrapper', function() {
+			$(this).find(".alt-img").fadeIn(400, "easeOutCubic");
+		}).on('mouseleave', '.product-image-wrapper', function() {
+			$(this).find(".alt-img").stop(true).fadeOut(400, "easeOutCubic");
+		});
+
+
+
+				$('.fade-on-hover').on('mouseenter', function() {
+			$(this).animate({opacity: 0.75}, 300, 'easeInOutCubic');
+		}).on('mouseleave', function() {
+			$(this).stop(true).animate({opacity: 1}, 300, 'easeInOutCubic');
+		});
+
+
+
+				var dResize = {
+
+			winWidth : 0
+			, winHeight : 0
+			, windowResizeTimeout : null
+
+			, init : function()
+			{
+				dResize.winWidth = $(window).width();
+				dResize.winHeight = $(window).height();
+				dResize.windowResizeTimeout;
+
+				$(window).on('resize', function(e) {
+					clearTimeout(dResize.windowResizeTimeout);
+					dResize.windowResizeTimeout = setTimeout(function() {
+						dResize.onEventResize(e);
+					}, 50);
+				});
+			}
+
+			, onEventResize : function(e)
+			{
+				//Prevent from executing the code in IE when the window wasn't actually resized
+				var winNewWidth = $(window).width();
+				var winNewHeight = $(window).height();
+
+				//Code in this condition will be executed only if window was actually resized
+				if (dResize.winWidth != winNewWidth || dResize.winHeight != winNewHeight)
+				{
+					//Trigger deferred resize event
+					$(window).trigger("themeResize", e);
+
+					//Additional code executed on deferred resize
+					dResize.onEventDeferredResize();
+				}
+
+				//Update window size variables
+				dResize.winWidth = winNewWidth;
+				dResize.winHeight = winNewHeight;
+			}
+
+			, onEventDeferredResize : function() //Additional code, execute after window was actually resized
+			{
+				//Products grid: equal height of items
+									setGridItemsEqualHeight($);
+				
+			}
+
+		}; //end: dResize
+
+		dResize.init();
+
+
+
+	}); //end: on document ready
+	
+	
+
+	jQuery(window).load(function(){
+		
+							setGridItemsEqualHeight(jQuery);
+		
+	}); //end: jQuery(window).load(){...}
+
+
+
+	//]]>
+</script>
+<div class="global-site-notice notice-cookie" id="notice-cookie-block">
+<div class="notice-inner">
+<div class="notice-text"><p>Wir verwenden Cookies, um das Funktionieren unserer Website zu verbessern, Inhalte und Anzeigen zu personalisieren, Dienste für soziale Medien anbieten zu könne und Zugriffe auf unsere Website zu analysieren. Wir geben diese Cookies an unsere Partner für Werbezwecke, Analysen und Dienste für soziale Medien. Durch die weitere Nutzung unserer Website stimmen Sie der Speicherung und der Verwendung von Cookies zu. Klicken Sie auf "Zustimmen" oder lesen Sie in unserer <a href="/datenschutzerklaerung" title="Datenschutzerklärung" target="_self">Datenschutzerklärung</a>, wie wir mit Ihren Daten umgehen.</p></div>
+<div class="actions"><button class="button" onclick="allowSaveCookie()"><span><span>Zustimmen</span></span></button></div>
+</div>
+</div>
+<script type="text/javascript">
+    /* <![CDATA[ */
+    function allowSaveCookie() {
+        Mage.Cookies.set('user_allowed_save_cookie', '{"4":1}', new Date(new Date().getTime() + 31536000 * 1000));
+        if (Mage.Cookies.get('user_allowed_save_cookie')) {
+            window.location.reload();
+        } else {
+            window.location.href = 'https://www.beautyfashionshop.de/cms/index/noCookies/';
+        }
+    }
+    $('notice-cookie-block').show();
+    /* ]]> */
+</script>
+<script>!function(a,b){var c=[],d=window.belcoFunction||"Belco";window[d]||(window[d]=function(a){if(void 0===window[d][a])throw new Error("Unknown method");return window[d][a].apply(window[d],Array.prototype.slice.call(arguments,1))});for(var e=["init","sync","track","page","open","close","toggle","on","once","off","anonymousId","customer","reset","sendMessage"],f=function(a){return function(){var b=Array.prototype.slice.call(arguments);return b.unshift(a),c.push(b),window[d]}},g=0;g<e.length;g++){var h=e[g];window[d][h]=f(h)}function i(){while(c.length>0){var a=c.shift();try{window[d].apply(window[d],a)}catch(b){console.error(b)}}}window[d].load=function(c){if(!a.getElementById("belco-js")){var d=a.createElement(b);d.async=!0,d.id="belco-js",d.type="text/javascript",d.src=("https:"===a.location.protocol?"https://":"http://")+"cdn.belco.io/widget.min.js",d.onload=d.onreadystatechange=function(a){var b=this.readyState;b&&"complete"!=b&&"loaded"!=b||("function"==typeof c&&c(a),i())};var e=a.getElementsByTagName(b)[0];e.parentNode.insertBefore(d,e)}},window.belcoConfig&&window[d].load(function(){window[d]("init",window.belcoConfig)})}(document,"script");</script>
+<script>
+Belco.load(function() {
+  Belco.init({"shopId":"LX37sEb8Bp4vvTiJ7"});
+});
+</script>
+<script type="text/javascript">
+    function initProLabelsTooltip(){
+        var ProlabelsTooltip = new ProLabelsTooltip({
+            'background' : '#000000',
+            'color'      : '#FFFFFF'
+        });
+    }
+
+    if (Prototype.Browser.IE) {
+        Event.observe(window, 'load', function(){
+            initProLabelsTooltip();
+        });
+    } else {
+        document.observe("dom:loaded", function(){
+            initProLabelsTooltip();
+        });
+    }
+</script>
+<script type="text/javascript">
+            (function () {
+                var _tsid = 'X5C02E13868CDC0CD29832180E30DEC8E';
+                _tsConfig = {
+                    'yOffset': '250', /* offset from page bottom */
+                    'variant': 'reviews', /* text, default, small, reviews, custom, custom_reviews */
+                    'customElementId': '', /* required for variants custom and custom_reviews */
+                    'trustcardDirection': '', /* for custom variants: topRight, topLeft, bottomRight, bottomLeft */
+                    'customBadgeWidth': '', /* for custom variants: 40 - 90 (in pixels) */
+                    'customBadgeHeight': '', /* for custom variants: 40 - 90 (in pixels) */
+                    'disableResponsive': 'false', /* deactivate responsive behaviour */
+                    'disableTrustbadge': 'false', /* deactivate trustbadge */
+                    'trustCardTrigger': 'mouseenter', /* set to 'click' if you want the trustcard to be opened on click instead */
+                    'customCheckoutElementId': '' /* required for custom trustcard */
+                };
+                var _ts = document.createElement('script');
+                _ts.type = 'text/javascript';
+                _ts.charset = 'utf-8';
+                _ts.async = true;
+                _ts.src = '//widgets.trustedshops.com/js/' + _tsid + '.js';
+                var __ts = document.getElementsByTagName('script')[0];
+                __ts.parentNode.insertBefore(_ts, __ts);
+            })();
+        </script>
+ <script type="text/javascript">
+            _tsProductReviewsConfig = {
+                tsid: 'X5C02E13868CDC0CD29832180E30DEC8E',
+                sku: ['ana1.98'],
+                variant: 'productreviews',
+                borderColor: '#FFDC0F',
+                locale: 'de_DE',
+                backgroundColor: ' #ffffff',
+                starColor: '#FFDC0F',
+                starSize: '15px',
+                ratingSummary: 'false',
+                maxHeight: '1200px',
+                'element': '#ts_product_sticker',
+                hideEmptySticker: 'false',
+                introtext: '' /* optional */
+            };
+            var scripts = document.getElementsByTagName('SCRIPT'),
+                me = scripts[scripts.length - 1];
+            var _ts = document.createElement('SCRIPT');
+            _ts.type = 'text/javascript';
+            _ts.async = true;
+            _ts.charset = 'utf-8';
+            _ts.src
+                = '//widgets.trustedshops.com/reviews/tsSticker/tsProductSticker.js';
+            me.parentNode.insertBefore(_ts, me);
+            _tsProductReviewsConfig.script = _ts;
+        </script>
+<script type="text/javascript">
+                if ($$('.extra-info').size() > 0) {
+            // CE 1.9 and EE 1.14
+            $$('.extra-info')[0].insert({top: "<div id='ts_product_widget'></div>"});
+        } else if ($$('.product-view .product-shop .product-name').size() > 0) {
+            // CE < 1.9 and EE < 1.14
+            $$('.product-info-container')[0].insert({before: "<div id='ts_product_widget'></div>"});
+        }
+    </script>
+<script type="text/javascript" src="//widgets.trustedshops.com/reviews/tsSticker/tsProductStickerSummary.js"></script>
+<script type="text/javascript">
+            var summaryBadge = new productStickerSummary();
+            summaryBadge.showSummary(
+                {
+                    'tsId': 'X5C02E13868CDC0CD29832180E30DEC8E',
+                    'sku': ['ana1.98'],
+                    'element': '#ts_product_widget',
+                    'starColor': '#FFDC0F',
+                    'starSize': '18px',
+                    'fontSize': '12px',
+                    'showRating': true,
+                    'scrollToReviews': false
+                }
+            );
+        </script>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_tag_params = {
+  ecomm_prodid: '20814',
+  ecomm_pagetype: 'product',
+  ecomm_totalvalue: '49'
+};
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 985047866;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
+<noscript>
+  <div style="display:inline;">
+    <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/985047866/?guid=ON&amp;script=0"/>
+  </div>
+</noscript>
+
+</div>
+</div>
+</div> 
+<script src='https://restapi.mailplus.nl/integrationservice-1.1.0/app/subscribe_popup/562iBzr2WAAbry3xapgDAkY701BkXd7x/HXL3KRYUfApLQTq6eeaIpTdx9B7PJKqh'></script>
+<style>.amcart-options {width: 80%;margin: 0 auto;text-align: left;}@media only screen and (min-width: 481px) {.product-view .product-shop {position:relative;} #ts_product_widget {top: 0;}}</style><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"cdf0791ca1","applicationID":"12012992","transactionName":"ZwRUZ0NWWEVWWhZbWF5Od1BFXllYGFoDRlZcDlEcQUVZUkJaFh1BWQRB","queueTime":0,"applicationTime":161,"atts":"S0NXEQtMS0s=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
